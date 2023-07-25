@@ -86,5 +86,5 @@ A data é formado por DD/MM/AA.
 |:----------|-------:|:-------|---------:|:--------|------:|
 | Criar repositório no GitHub | manhã | 25/07/23 | manhã  | 25/07/23 | 2% |
 | Criar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 2% |
-| Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 94% |
+| Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 96% |
 | | | | | | |
