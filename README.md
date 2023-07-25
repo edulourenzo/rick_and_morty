@@ -4,7 +4,7 @@ Sumário:
 1. [introdução](#Introdução)
 1. [Documentação](#Documentação)
 1. [Estratégia](#Estratégia)
-1. [To-Do List] (#To-Do List)
+1. [To-Do List](#To-Do-list)
 1. [Tabela de tempo](#Tabela-de-tempo)
 
 ## Introdução
