@@ -1,11 +1,11 @@
 # Rick and Morty
 
 Sumário:
-1. [introdução](#Introdução)
-1. [Documentação](#Documentação)
-1. [Estratégia](#Estratégia)
-1. [To-Do List](#To-Do-list)
-1. [Tabela de tempo](#Tabela-de-tempo)
+1. [introdução](#introdução)
+1. [Documentação](#documentação)
+1. [Estratégia](#estratégia)
+1. [To-Do List](#to-do-list)
+1. [Tabela de tempo](#tabela-de-tempo)
 
 ## Introdução
 
