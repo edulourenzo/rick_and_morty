@@ -78,13 +78,13 @@ Marque as tarefas concluidas!
 ## Tabela de tempo
 
 O tempo é dividio em 4 períodos: madrugada, manhã, tarde e noite, representando os campos Início (I.) e término (T.).
-A quantidade de tempor é representada por um percentual de 1% à 100%.
+A quantidade de tempor é representada em minutos.
 A data é formado por DD/MM/AA.
 
 
 | Descrição | Início | Data I. | Término | Data T. | Total |
 |:----------|-------:|:-------|---------:|:--------|------:|
-| Criar repositório no GitHub | manhã | 25/07/23 | manhã  | 25/07/23 | 2% |
-| Criar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 2% |
-| Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 96% |
+| Criar repositório no GitHub | manhã | 25/07/23 | manhã  | 25/07/23 | 5 min |
+| Criar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 5 min |
+| Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 170 min |
 | | | | | | |
