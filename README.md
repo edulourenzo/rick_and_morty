@@ -54,7 +54,7 @@ Marque as tarefas concluidas!
 - [x] Criar repositório no GitHub.
 - [x] Criar Readme.md.
 - [x] Editar Readme.md.
-- [ ]  Criar arquivos Index.html, script.js e style.css.
+- [x]  Criar arquivos Index.html, script.js e style.css.
 - [ ]  Definir tamanho da na proporção de tela 9:16 (smartphone).
 - [ ]  Estudar lógica de tamanho adaptável para tela widescreen.
 - [ ]  estudar max-size do CSS.
@@ -87,4 +87,5 @@ A data é formado por DD/MM/AA.
 | Criar repositório no GitHub | manhã | 25/07/23 | manhã  | 25/07/23 | 5 min |
 | Criar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 5 min |
 | Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 170 min |
+| Criar arquivos Index.html, script.js e style.css | manhã | 26/07/23 | manhã | 26/07/23 | 30 min |
 | | | | | | |
