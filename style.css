@@ -25,3 +25,16 @@ img {
 }
 
 /* ======================================== */
+
+html {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+} 
+
+body {
+    max-height: 100vh;
+    aspect-ratio: 9/16;
+    margin: auto;
+    overflow: hidden;
+}

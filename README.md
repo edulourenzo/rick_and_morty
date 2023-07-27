@@ -54,25 +54,25 @@ Marque as tarefas concluidas!
 - [x] Criar repositório no GitHub.
 - [x] Criar Readme.md.
 - [x] Editar Readme.md.
-- [x]  Criar arquivos Index.html, script.js e style.css.
-- [ ]  Definir tamanho da na proporção de tela 9:16 (smartphone).
-- [ ]  Estudar lógica de tamanho adaptável para tela widescreen.
-- [ ]  estudar max-size do CSS.
-- [ ]  Criar paleta de ores verde e azul conforme o desenho.
-- [ ]  Procurar fonte customizada parecida com a do desenho no Google fonts.
-- [ ]  Como fazer um contorno em CSS puro.
-- [ ]  Procurar ícones de sexo no Google fonts.
-- [ ]  Obter link da API no repositório antigo.
-- [ ]  Pegar o tamanho da imagem (400p) da API.
-- [ ]  Estudar conexão com API (ansy com try/catch, ou promisse com then).
-- [ ]  Procurar CSV do portal do desenho.
-- [ ]  Se não usar .png.
-- [ ]  Fazer o JS da animação do portal girando e crescendo.
-- [ ]  Criar grid com os dados obtidos da API.
-- [ ]  Customizar a div e os campos.
-- [ ]  Verificar capturas de erros.
-- [ ]  Testar rede e conexão pela ferramenta do browser.
-- [ ]  Postar no Linkedin e redes sociais.
+- [x] Criar arquivos Index.html, script.js e style.css.
+- [x] Definir tamanho de tela na proporção 9:16 (smartphone).
+- [x] Estudar lógica de tamanho adaptável para tela widescreen.
+- [x] Estudar max-size do CSS.
+- [ ] Criar paleta de ores verde e azul conforme o desenho.
+- [ ] Procurar fonte customizada parecida com a do desenho no Google fonts.
+- [ ] Como fazer um contorno em CSS puro.
+- [ ] Procurar ícones de sexo no Google fonts.
+- [ ] Obter link da API no repositório antigo.
+- [ ] Pegar o tamanho da imagem (400p) da API.
+- [ ] Estudar conexão com API (ansy com try/catch, ou promisse com then).
+- [ ] Procurar CSV do portal do desenho.
+- [ ] Se não usar .png.
+- [ ] Fazer o JS da animação do portal girando e crescendo.
+- [ ] Criar grid com os dados obtidos da API.
+- [ ] Customizar a div e os campos.
+- [ ] Verificar capturas de erros.
+- [ ] Testar rede e conexão pela ferramenta do browser.
+- [ ] Postar no Linkedin e redes sociais.
 
 
 ## Tabela de tempo
@@ -88,4 +88,5 @@ A data é formado por DD/MM/AA.
 | Criar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 5 min |
 | Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 170 min |
 | Criar arquivos Index.html, script.js e style.css | manhã | 26/07/23 | manhã | 26/07/23 | 30 min |
+| Definir tamanho de tela na proporção 9:16 | tarde | 26/07/23 | manhã | 27/07/23 | 480min |
 | | | | | | |
