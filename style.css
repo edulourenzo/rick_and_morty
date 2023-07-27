@@ -30,6 +30,8 @@ html {
     display: block;
     height: 100%;
     overflow: hidden;
+    background-color: white;
+    border: 3px solid red;
 } 
 
 body {
@@ -37,4 +39,16 @@ body {
     aspect-ratio: 9/16;
     margin: auto;
     overflow: hidden;
+    background-color: #7777FF;
+    border: 3px solid #000077;
+}
+
+header {
+    background-color: #FFFF33;
+    border: 3px solid #777700;
+}
+
+footer {
+    background: #33FF33;
+    border: 3px solid #007700;
 }
