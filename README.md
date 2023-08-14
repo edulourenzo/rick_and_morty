@@ -53,8 +53,8 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 
 |Portal |Outdoor|
 |:-----:|:-----:|
-|![#303055](https://placehold.it/160x40/303055/FFFFFF?text=303055)|![#217F31](https://placehold.it/160x40/217F31/FFFFFF?text=217F31)|
-|![#448A32](https://placehold.it/160x40/448A32/FFFFFF?text=448A32)|![#36445C](https://placehold.it/160x40/36445C/FFFFFF?text=36445C)|
+|![#303055](https://placehold.it/160x40/303055/FFFFFF?text=303055)|![#36445C](https://placehold.it/160x40/36445C/FFFFFF?text=36445C)|
+|![#448A32](https://placehold.it/160x40/448A32/FFFFFF?text=448A32)|![#217F31](https://placehold.it/160x40/217F31/FFFFFF?text=217F31)|
 |![#6FC41C](https://placehold.it/160x40/6FC41C/FFFFFF?text=6FC41C)|![#9D534A](https://placehold.it/160x40/9D534A/FFFFFF?text=9D534A)|
 |![#9ECB0E](https://placehold.it/160x40/9ECB0E/FFFFFF?text=9ECB0E)|![#43C53C](https://placehold.it/160x40/43C53C/FFFFFF?text=43C53C)|
 |![#92C752](https://placehold.it/160x40/92C752/000000?text=92C752)|![#5AC1B8](https://placehold.it/160x40/5AC1B8/000000?text=5AC1B8)|
