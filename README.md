@@ -41,6 +41,16 @@ O conceito básico é criar card do desenho animado "Rick and Morty" usando a AP
 A documentação se encontra no site: [Docs](https://rickandmortyapi.com/documentation) 
 > "Esta documentação ajudará você a se familiarizar com os recursos da API de Rick and Morty e mostrará como fazer diferentes consultas, para que você possa aproveitá-la ao máximo. (Translate)".
 
+## Paleta de cores
+
+As paletas de cores foram inspiradas a partir do blog [Outsider Data Science](https://outsiderdata.blog/posts/2019-02-04-rick-and-morty-palettes/2019-02-04-rick-and-morty-palettes.html) ou [GitHub](https://github.com/apsteinmetz/images-to-pal), criado por @Art Steinmetz.
+
+As cores pincipais foram advindas da imagem "Portal" e se necessário cores adicionais e secundária da imagem "Outdoor".
+
+![Tabela de paletas](https://github.com/apsteinmetz/images-to-pal/blob/master/README_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+
+
+
 ## Estratégia
 
 - Criar um card.
