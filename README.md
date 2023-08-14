@@ -56,11 +56,11 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 |![#303055](https://placehold.it/160x40/303055/FFFFFF?text=303055)|![#217F31](https://placehold.it/160x40/217F31/FFFFFF?text=217F31)|
 |![#448A32](https://placehold.it/160x40/448A32/FFFFFF?text=448A32)|![#36445C](https://placehold.it/160x40/36445C/FFFFFF?text=36445C)|
 |![#6FC41C](https://placehold.it/160x40/6FC41C/FFFFFF?text=6FC41C)|![#9D534A](https://placehold.it/160x40/9D534A/FFFFFF?text=9D534A)|
-|![#9ECB0E](https://placehold.it/160x40/9ECB0E/FFFFFF?text=9ECB0E)|![#43C53C](https://placehold.it/160x40/43C53C/FFFFFF?text=43C53C)|
-|![#92C752](https://placehold.it/160x40/92C752/FFFFFF?text=92C752)|![#5AC1B8](https://placehold.it/160x40/5AC1B8/FFFFFF?text=5AC1B8)|
-|![#E5EC2E](https://placehold.it/160x40/E5EC2E/FFFFFF?text=E5EC2E)|![#C6C199](https://placehold.it/160x40/C6C199/FFFFFF?text=C6C199)|
-|![#B5C1C3](https://placehold.it/160x40/B5C1C3/FFFFFF?text=B5C1C3)|![#72CEFA](https://placehold.it/160x40/72CEFA/FFFFFF?text=72CEFA)|
-|![#ECE58F](https://placehold.it/160x40/ECE58F/FFFFFF?text=ECE58F)|![#9FE4EFZ](https://placehold.it/160x40/9FE4EFZ/FFFFFF?text=9FE4EFZ)|
+|![#9ECB0E](https://placehold.it/160x40/9ECB0E/FFFFFF?text=9ECB0E)|![#43C53C](https://placehold.it/160x40/43C53C/000000?text=43C53C)|
+|![#92C752](https://placehold.it/160x40/92C752/000000?text=92C752)|![#5AC1B8](https://placehold.it/160x40/5AC1B8/000000?text=5AC1B8)|
+|![#E5EC2E](https://placehold.it/160x40/E5EC2E/000000?text=E5EC2E)|![#C6C199](https://placehold.it/160x40/C6C199/000000?text=C6C199)|
+|![#B5C1C3](https://placehold.it/160x40/B5C1C3/000000?text=B5C1C3)|![#72CEFA](https://placehold.it/160x40/72CEFA/000000?text=72CEFA)|
+|![#ECE58F](https://placehold.it/160x40/ECE58F/000000?text=ECE58F)|![#9FE4EFZ](https://placehold.it/160x40/9FE4EFZ/000000?text=9FE4EFZ)|
 
 
 ## Estratégia
