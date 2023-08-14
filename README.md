@@ -9,7 +9,7 @@ Sumário:
 
 ## Introdução
 
-![Cartaz do título de abertura da série Rick and Morty](https://en.wikipedia.org/wiki/Rick_and_Morty#/media/File:Rick_and_Morty_title_card_(cropped).pngg)
+![Cartaz do título de abertura da série Rick and Morty](https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_(cropped).png)
 
 Página web com ituito de aprendizado de front-end consumindo uma API externa.
 O conceito básico é criar card do desenho animado "Rick and Morty" usando a API do site: [The Rick and Morty API](https://rickandmortyapi.com/).
