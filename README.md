@@ -113,5 +113,5 @@ A data é formado por DD/MM/AA.
 | Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 170min |
 | Criar arquivos Index.html, script.js e style.css | manhã | 26/07/23 | manhã | 26/07/23 | 30in |
 | Definir tamanho de tela na proporção 9:16 | tarde | 26/07/23 | manhã | 27/07/23 | 480min |
-| Criar paleta de cores verde e azul conforme o desenho| manhã | 14/08/23 | manhã |14/08/16 | 120min |
+| Criar paleta de cores conforme o desenho| manhã | 14/08/23 | manhã |14/08/16 | 120min |
 | | | | | | |
