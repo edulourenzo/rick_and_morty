@@ -3,6 +3,7 @@
 Sumário:
 1. [introdução](#introdução)
 1. [Documentação](#documentação)
+1. [Paleta de cores](#paleta-de-cores)
 1. [Estratégia](#estratégia)
 1. [To-Do List](#to-do-list)
 1. [Tabela de tempo](#tabela-de-tempo)
