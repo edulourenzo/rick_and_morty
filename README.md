@@ -83,7 +83,7 @@ Marque as tarefas concluidas!
 - [x] Estudar lógica de tamanho adaptável para tela widescreen.
 - [x] Estudar max-size do CSS.
 - [X] Criar paleta de cores verde e azul conforme o desenho.
-- [ ] Procurar fonte customizada parecida com a do desenho no Google fonts.
+- [x] Procurar fonte customizada parecida com a do desenho no Google fonts.
 - [ ] Como fazer um contorno em CSS puro.
 - [ ] Procurar ícones de sexo no Google fonts.
 - [ ] Obter link da API no repositório antigo.
@@ -114,4 +114,5 @@ A data é formado por DD/MM/AA.
 | Criar arquivos Index.html, script.js e style.css | manhã | 26/07/23 | manhã | 26/07/23 | 30in |
 | Definir tamanho de tela na proporção 9:16 | tarde | 26/07/23 | manhã | 27/07/23 | 480min |
 | Criar paleta de cores conforme o desenho| manhã | 14/08/23 | manhã |14/08/16 | 120min |
+| Procurar fonte customizada | manhã | 15/08/23 | manhã | 16/08/23 | 180min |
 | | | | | | |
