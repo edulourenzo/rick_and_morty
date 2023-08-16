@@ -24,7 +24,16 @@ img {
     height: auto;
 }
 
+/* =================Fonte================== */
+
+@font-face {
+    font-family: "Get Schwifty";
+    src: url(get_schwifty.ttf)
+    format("TrueType");
+}
+
 /* ======================================== */
+
 
 html {
     display: block;
@@ -41,6 +50,11 @@ body {
     overflow: hidden;
     background-color: #7777FF;
     border: 3px solid #000077;
+}
+
+h1{
+    font-family: "get_schwifty";
+    font-size: 36px;
 }
 
 header {
