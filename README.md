@@ -82,9 +82,9 @@ Marque as tarefas concluidas!
 - [x] Definir tamanho de tela na proporção 9:16 (smartphone).
 - [x] Estudar lógica de tamanho adaptável para tela widescreen.
 - [x] Estudar max-size do CSS.
-- [X] Criar paleta de cores verde e azul conforme o desenho.
+- [x] Criar paleta de cores verde e azul conforme o desenho.
 - [x] Procurar fonte customizada parecida com a do desenho no Google fonts.
-- [ ] Como fazer um contorno em CSS puro.
+- [x] Como fazer um contorno em CSS puro.
 - [ ] Procurar ícones de sexo no Google fonts.
 - [ ] Obter link da API no repositório antigo.
 - [ ] Pegar o tamanho da imagem (400p) da API.
@@ -115,4 +115,6 @@ A data é formado por DD/MM/AA.
 | Definir tamanho de tela na proporção 9:16 | tarde | 26/07/23 | manhã | 27/07/23 | 480min |
 | Criar paleta de cores conforme o desenho| manhã | 14/08/23 | manhã |14/08/16 | 120min |
 | Procurar fonte customizada | manhã | 15/08/23 | manhã | 16/08/23 | 180min |
+|Fazer contorno do título em CSS | manhã | 17/08/23 | manhã | 17/08/23 | 120min |
+| | | | | | |
 | | | | | | |

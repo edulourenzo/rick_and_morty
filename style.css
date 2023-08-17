@@ -27,11 +27,10 @@ img {
 /* =================Fonte================== */
 
 @font-face {
-    font-family: "Get Schwifty";
-    src: url(get_schwifty.ttf)
+    font-family: "Ricky and Morty font";
+    src: url(Ricky-and-Morty-font.ttf)
     format("TrueType");
 }
-
 /* ======================================== */
 
 
@@ -53,13 +52,18 @@ body {
 }
 
 h1{
-    font-family: "Get Schwifty";
-    font-size: 36px;
+    /* font-family: "Get Schwifty"; */
+    font-family: "Ricky and Morty font";
+    font-size: 72px;
+    font-weight: bolder;
+    color: #0FAFC7;
+    -webkit-text-stroke: 0.1px #9DE989;
+    text-align: center;
 }
 
 header {
-    background-color: #FFFF33;
-    border: 3px solid #777700;
+    background-color: #000000;
+    border: 3px solid #FFFF00;
 }
 
 footer {
