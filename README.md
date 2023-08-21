@@ -112,7 +112,7 @@ A data é formado por DD/MM/AA.
 | Criar repositório no GitHub | manhã | 25/07/23 | manhã  | 25/07/23 | 5min |
 | Criar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 5min |
 | Editar Readme.md | manhã | 25/07/23 | manhã  | 25/07/23 | 170min |
-| Criar arquivos Index.html, script.js e style.css | manhã | 26/07/23 | manhã | 26/07/23 | 30in |
+| Criar arquivos Index.html, script.js e style.css | manhã | 26/07/23 | manhã | 26/07/23 | 30min |
 | Definir tamanho de tela na proporção 9:16 | tarde | 26/07/23 | manhã | 27/07/23 | 480min |
 | Criar paleta de cores conforme o desenho| manhã | 14/08/23 | manhã |14/08/16 | 120min |
 | Procurar fonte customizada | manhã | 15/08/23 | manhã | 16/08/23 | 180min |
