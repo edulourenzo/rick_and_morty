@@ -85,7 +85,8 @@ Marque as tarefas concluidas!
 - [x] Criar paleta de cores verde e azul conforme o desenho.
 - [x] Procurar fonte customizada parecida com a do desenho no Google fonts.
 - [x] Como fazer um contorno em CSS puro.
-- [ ] Procurar ícones de sexo no Google fonts.
+- [x] Procurar ícones de sexo no Google fonts.
+- [x] Definir o layout dos dados.
 - [ ] Obter link da API no repositório antigo.
 - [ ] Pegar o tamanho da imagem (400p) da API.
 - [ ] Estudar conexão com API (ansy com try/catch, ou promisse com then).
@@ -116,5 +117,7 @@ A data é formado por DD/MM/AA.
 | Criar paleta de cores conforme o desenho| manhã | 14/08/23 | manhã |14/08/16 | 120min |
 | Procurar fonte customizada | manhã | 15/08/23 | manhã | 16/08/23 | 180min |
 |Fazer contorno do título em CSS | manhã | 17/08/23 | manhã | 17/08/23 | 120min |
+| Procurar ícones de sexo | manhã | 18/08/23| manhã | 18/08/23 | 150min |
+| Definir o layout dos dados | manhã | 21/08/23 | manhã | 21/08/23 | 90min|
 | | | | | | |
 | | | | | | |
