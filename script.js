@@ -22,31 +22,33 @@ fetch(apiCharacter, init)
         count = data.info.count;
     });
 
+function drawNumber(max)
+{
+    return Math.floor(Math.random() * max) + 1;
+}
+
 randomly.addEventListener("click", function () {
-    // for(i = 0; i < 10; i++)
-    // {
-    //     const rand = Math.floor(Math.random() * count) + 1;
-    //     console.log(rand);
-    // }
-    // console.log("\n===\n\n");
-
     
-    let description;
-    let symbol;
-    let value;
-
-    description = document.createElement("span");
-    description.appendChild(document.createTextNode("Estado: "));
+    console.log(drawNumber(count));
    
 
-    symbol = document.createElement("span");
-    symbol.appendChild(document.createTextNode("\u271D"));
+    
+    // let description;
+    // let symbol;
+    // let value;
 
-    value = document.createElement("span");
-    value.appendChild(document.createTextNode("Morto"));
+    // description = document.createElement("span");
+    // description.appendChild(document.createTextNode("Estado: "));
+   
 
-    divStatus.appendChild(description);
-    divStatus.appendChild(symbol);
-    divStatus.appendChild(value);
-    console.log(divStatus);
+    // symbol = document.createElement("span");
+    // symbol.appendChild(document.createTextNode("\u271D"));
+
+    // value = document.createElement("span");
+    // value.appendChild(document.createTextNode("Morto"));
+
+    // divStatus.appendChild(description);
+    // divStatus.appendChild(symbol);
+    // divStatus.appendChild(value);
+    // console.log(divStatus);
 })
