@@ -90,7 +90,7 @@ Marque as tarefas concluidas!
 - [x] Definir o layout dos dados.
 - [x] Estudar conexão com API (ansy com try/catch, ou promisse com then).
 - [x] Obter link da API.
-- [x] Obeter quantidade de personagens.
+- [x] Obter quantidade de personagens.
 - [x] Procurar CSV do portal do desenho.
 - [x] Inserir conteúdo na div dinamicamente.
 - [ ] Se não usar .png.
@@ -124,7 +124,7 @@ A data é formado por DD/MM/AA.
 | Definir o layout dos dados | manhã | 21/08/23 | manhã | 21/08/23 | 90min|
 | Estudar conexão com API |  tarde | 21/08/23 | tarde | 21/08 | 300min |
 | Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 60min |
-| Obeter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
+| Obter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
 | Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tade | 23/08/23 | 150min |
 | | | | | | |
