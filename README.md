@@ -127,7 +127,7 @@ A data é formado por DD/MM/AA.
 | Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 60min |
 | Obter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
-| Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tade | 23/08/23 | 150min |
-| Criar função para sortear o número do personagem | tarde | 23/08/23 | tade | 23/08/23 | 150min |
+| Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tarde | 23/08/23 | 150min |
+| Criar função para sortear o número do personagem | tarde | 23/08/23 | tarde | 23/08/23 | 15min |
  | | | | | |
 | | | | | | |
