@@ -121,7 +121,7 @@ A data é formado por DD/MM/AA.
 | Procurar ícones de sexo | manhã | 18/08/23| manhã | 18/08/23 | 150min |
 | Pegar o tamanho da imagem da API | manhã | 21/08/23 | manhã | 21/08/23 | 15min |
 | Definir o layout dos dados | manhã | 21/08/23 | manhã | 21/08/23 | 90min|
-| Estudar conexão com API |  tarde | 21/08/23 | manhã | 23/08 | 300min |
+| Estudar conexão com API |  tarde | 21/08/23 | tarde | 21/08 | 300min |
 | Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 60min |
 | Obeter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
