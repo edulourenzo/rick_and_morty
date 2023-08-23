@@ -88,9 +88,9 @@ Marque as tarefas concluidas!
 - [x] Procurar ícones de sexo no Google fonts.
 - [x] Pegar o tamanho da imagem (300p) da API.
 - [x] Definir o layout dos dados.
+- [x] Estudar conexão com API (ansy com try/catch, ou promisse com then).
 - [x] Obter link da API.
 - [x] Obeter quantidade de personagens.
-- [ ] Estudar conexão com API (ansy com try/catch, ou promisse com then).
 - [x] Procurar CSV do portal do desenho.
 - [ ] Se não usar .png.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
@@ -121,8 +121,9 @@ A data é formado por DD/MM/AA.
 | Procurar ícones de sexo | manhã | 18/08/23| manhã | 18/08/23 | 150min |
 | Pegar o tamanho da imagem da API | manhã | 21/08/23 | manhã | 21/08/23 | 15min |
 | Definir o layout dos dados | manhã | 21/08/23 | manhã | 21/08/23 | 90min|
-| Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 360min |
+| Estudar conexão com API |  tarde | 21/08/23 | manhã | 23/08 | 300min |
+| Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 60min |
 | Obeter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
-| | | | | | |
+
 | | | | | | |
