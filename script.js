@@ -19,10 +19,10 @@ fetch(apiCharacter, init)
         count = data.info.count;
     });
 
-randomly.addEventListener("click", function() {
+randomly.addEventListener("click", function () {
     // for(i = 0; i < 10; i++)
     // {
-    //     const rand = Math.floor(Math.random()*count) + 1;
+    //     const rand = Math.floor(Math.random() * count) + 1;
     //     console.log(rand);
     // }
     // console.log("\n===\n\n");

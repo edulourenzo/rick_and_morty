@@ -86,11 +86,12 @@ Marque as tarefas concluidas!
 - [x] Procurar fonte customizada parecida com a do desenho no Google fonts.
 - [x] Como fazer um contorno em CSS puro.
 - [x] Procurar ícones de sexo no Google fonts.
+- [x] Pegar o tamanho da imagem (300p) da API.
 - [x] Definir o layout dos dados.
-- [ ] Obter link da API no repositório antigo.
-- [ ] Pegar o tamanho da imagem (400p) da API.
+- [x] Obter link da API.
+- [x] Obeter quantidade de personagens.
 - [ ] Estudar conexão com API (ansy com try/catch, ou promisse com then).
-- [ ] Procurar CSV do portal do desenho.
+- [x] Procurar CSV do portal do desenho.
 - [ ] Se não usar .png.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Criar grid com os dados obtidos da API.
@@ -118,6 +119,10 @@ A data é formado por DD/MM/AA.
 | Procurar fonte customizada | manhã | 15/08/23 | manhã | 16/08/23 | 180min |
 |Fazer contorno do título em CSS | manhã | 17/08/23 | manhã | 17/08/23 | 120min |
 | Procurar ícones de sexo | manhã | 18/08/23| manhã | 18/08/23 | 150min |
+| Pegar o tamanho da imagem da API | manhã | 21/08/23 | manhã | 21/08/23 | 15min |
 | Definir o layout dos dados | manhã | 21/08/23 | manhã | 21/08/23 | 90min|
+| Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 360min |
+| Obeter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
+| Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
 | | | | | | |
 | | | | | | |
