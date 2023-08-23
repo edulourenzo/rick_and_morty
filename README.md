@@ -92,6 +92,7 @@ Marque as tarefas concluidas!
 - [x] Obter link da API.
 - [x] Obeter quantidade de personagens.
 - [x] Procurar CSV do portal do desenho.
+- [x] Inserir conteúdo na div dinamicamente.
 - [ ] Se não usar .png.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Criar grid com os dados obtidos da API.
@@ -125,5 +126,5 @@ A data é formado por DD/MM/AA.
 | Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 60min |
 | Obeter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
-
+| Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tade | 23/08/23 | 150min |
 | | | | | | |

@@ -1,6 +1,9 @@
 //DOM elements
+const divId = document.getElementById("container-id");
+const divName  = document.getElementById("container-name");
+const divStatus = document.getElementById("container-status");
+const divGender = document.getElementById("container-gender");
 const randomly = document.getElementById("randomly");
-
 
 //Initialization of API
 const apiCharacter = 'https://rickandmortyapi.com/api/character/';
@@ -26,4 +29,24 @@ randomly.addEventListener("click", function () {
     //     console.log(rand);
     // }
     // console.log("\n===\n\n");
+
+    
+    let description;
+    let symbol;
+    let value;
+
+    description = document.createElement("span");
+    description.appendChild(document.createTextNode("Estado: "));
+   
+
+    symbol = document.createElement("span");
+    symbol.appendChild(document.createTextNode("\u271D"));
+
+    value = document.createElement("span");
+    value.appendChild(document.createTextNode("Morto"));
+
+    divStatus.appendChild(description);
+    divStatus.appendChild(symbol);
+    divStatus.appendChild(value);
+    console.log(divStatus);
 })
