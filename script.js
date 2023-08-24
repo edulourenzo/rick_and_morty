@@ -1,6 +1,6 @@
 //DOM elements
 const divId = document.getElementById("container-id");
-const divName  = document.getElementById("container-name");
+const divName = document.getElementById("container-name");
 const divStatus = document.getElementById("container-status");
 const divGender = document.getElementById("container-gender");
 const randomly = document.getElementById("randomly");
@@ -22,24 +22,27 @@ fetch(apiCharacter, init)
         count = data.info.count;
     });
 
-function drawNumber(max)
-{
+function drawNumber(max) {
     return Math.floor(Math.random() * max) + 1;
 }
 
 randomly.addEventListener("click", function () {
-    
-    console.log(drawNumber(count));
-   
 
-    
+    const id = drawNumber(count);
+    console.log(id);
+    fetch(`${apiCharacter}${id}`, init)
+        .then((response) => (response.json()))
+        .then((data) => {
+            console.log(data);
+        });
+
     // let description;
     // let symbol;
     // let value;
 
     // description = document.createElement("span");
     // description.appendChild(document.createTextNode("Estado: "));
-   
+
 
     // symbol = document.createElement("span");
     // symbol.appendChild(document.createTextNode("\u271D"));

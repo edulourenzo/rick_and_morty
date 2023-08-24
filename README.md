@@ -94,6 +94,7 @@ Marque as tarefas concluidas!
 - [x] Procurar CSV do portal do desenho.
 - [x] Inserir conteúdo na div dinamicamente.
 - [x] Criar função para sortear o número do personagem.
+- [x] Obter JSON do personagem sorteado.
 - [ ] Se não usar .png.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Criar grid com os dados obtidos da API.
@@ -129,5 +130,5 @@ A data é formado por DD/MM/AA.
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
 | Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tarde | 23/08/23 | 150min |
 | Criar função para sortear o número do personagem | tarde | 23/08/23 | tarde | 23/08/23 | 15min |
- | | | | | |
+ Obter JSON do personagem sorteado | manhã | 24/08/23 | manhã | 24/08/23 | 15min |
 | | | | | | |
