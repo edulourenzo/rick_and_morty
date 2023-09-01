@@ -15,26 +15,55 @@ const init = {
     }
 };
 
+//const myPromise = new Promise((resolve, reject) => {});
+//Promise.resolve("input").then(onfulfilled, onrejected);
+//Promise.reject("input").then(onfulfilled).catch(onrejected);
+// async function () => { 
+//     let x; 
+//     try {x = await new Promise.resolve("input");} 
+//     catch (err) {x = await new Promise.reject("input"); console.log(err);}}
+
 let count = 2; //async safeguard (Rick and Morty).
+
 fetch(apiCharacter, init)
     .then((response) => (response.json()))
-    .then((data) => {
-        count = data.info.count;
-    });
+    .then((data) => (count = data.info.count));
+
+async function getCount(number) {
+    const response = await fetch(apiCharacter, init);
+    const data = await response.json();
+    number = await data.info.count;
+    console.log(`O valor de number é: ${number}`);
+
+}
 
 function drawNumber(max) {
     return Math.floor(Math.random() * max) + 1;
 }
 
-randomly.addEventListener("click", function () {
-
-    const id = drawNumber(count);
-    console.log(id);
-    fetch(`${apiCharacter}${id}`, init)
+function getCharacter(number, temp) {
+    fetch(`${apiCharacter}${number}`, init)
         .then((response) => (response.json()))
         .then((data) => {
-            console.log(data);
+            console.log(typeof(data));
+            temp = data;
+            console.log(typeof(temp));
         });
+}
+
+async function main(params) {
+    //draw character number
+    const characterNumber = drawNumber(count);
+    console.log(`Número sorteado: ${characterNumber}`);
+    //get json from API
+    //get url from response
+    //get image from API
+    //(future) set animation
+    //insert info in grid layout
+}
+
+randomly.addEventListener("click", main);
+    
 
     // let description;
     // let symbol;
@@ -54,4 +83,3 @@ randomly.addEventListener("click", function () {
     // divStatus.appendChild(symbol);
     // divStatus.appendChild(value);
     // console.log(divStatus);
-})

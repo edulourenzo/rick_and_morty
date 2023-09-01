@@ -92,10 +92,11 @@ Marque as tarefas concluidas!
 - [x] Obter link da API.
 - [x] Obter quantidade de personagens.
 - [x] Procurar CSV do portal do desenho.
+- [x] Usar .png para o portal (CSV inexistênte).
 - [x] Inserir conteúdo na div dinamicamente.
 - [x] Criar função para sortear o número do personagem.
 - [x] Obter JSON do personagem sorteado.
-- [ ] Se não usar .png.
+- [x] Estudar async/await vs. promisse/then.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Criar grid com os dados obtidos da API.
 - [ ] Customizar a div e os campos.
@@ -128,7 +129,10 @@ A data é formado por DD/MM/AA.
 | Obter link da API | tarde | 21/08/23 | manhã | 23/08 | 60min |
 | Obter quantidade de personagens | manhã | 23/08/23 | manhã | 23/08/23 | 30min |
 | Procurar CSV do portal do desenho | manhã | 23/08/23 | manhã | 23/08/23 | 15min |
+| Usar .png para o portal | manhã | ??/??/23 | manhã | ??/??/23 | 30min |
 | Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tarde | 23/08/23 | 150min |
 | Criar função para sortear o número do personagem | tarde | 23/08/23 | tarde | 23/08/23 | 15min |
  Obter JSON do personagem sorteado | manhã | 24/08/23 | manhã | 24/08/23 | 15min |
+| Estudar async/await vs. promisse/then | manhã | 29/08/23 | manhã | 31/08/23 | 720min |
+| | | | | | |
 | | | | | | |
