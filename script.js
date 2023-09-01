@@ -47,29 +47,25 @@ async function main(params) {
     
     //draw character number
     const characterNumber = drawNumber(count);
-    console.log(`Número sorteado: ${characterNumber}`);
 
     //get json from API
     response =  await fetch(`${apiCharacter}${characterNumber}`, init);
     const character = await response.json();
-    console.log(character);
 
     //get url from response
     //character.image
-    console.log(`URL da imagem: ${character.image}`);
     
     //get image from API
     response = await fetch(character.image, init);
     const imageBlob = await response.blob();
-    console.log(imageBlob);
 
     // create object from image
     const imageObjectURL = URL.createObjectURL(imageBlob);
-    console.log(`Objeto da imagem: ${imageObjectURL}`);
+    
     //(future) set animation
     //{...}
 
-    //insert image in to html
+    //insert image in html
     image.src = imageObjectURL;
     //??? URL.revokeObjectURL(imageObjectURL); ???
 
