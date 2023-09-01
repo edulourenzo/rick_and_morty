@@ -54,8 +54,13 @@ function getCharacter(number, temp) {
 async function main(params) {
     //draw character number
     const characterNumber = drawNumber(count);
-    console.log(`Número sorteado: ${characterNumber}`);
+    // console.log(`Número sorteado: ${characterNumber}`);
+
     //get json from API
+    const response =  await fetch(`${apiCharacter}${characterNumber}`, init);
+    const character = await response.json();
+    console.log(character);
+
     //get url from response
     //get image from API
     //(future) set animation
