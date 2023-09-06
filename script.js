@@ -1,9 +1,8 @@
 //DOM elements
-const image = document.getElementById("image");
-const divId = document.getElementById("container-id");
-const divName = document.getElementById("container-name");
-const divStatus = document.getElementById("container-status");
-const divGender = document.getElementById("container-gender");
+const spanId = document.getElementById("span-id");
+const spanName = document.getElementById("span-name");
+const spanStatus = document.getElementById("span-status");
+const spanGender = document.getElementById("span-gender");
 const randomly = document.getElementById("randomly");
 
 //Initialization of API
@@ -70,28 +69,11 @@ async function main(params) {
     //??? URL.revokeObjectURL(imageObjectURL); ???
 
     //insert info in grid layout
-    
+    spanId.textContent = character.id;
+    spanName.textContent = character.name;
+    spanStatus.textContent = character.status;
+    spanGender.textContent = character.gender;
     
 }
 
 randomly.addEventListener("click", main);
-    
-
-// let description;
-// let symbol;
-// let value;
-
-// description = document.createElement("span");
-// description.appendChild(document.createTextNode("Estado: "));
-
-
-// symbol = document.createElement("span");
-// symbol.appendChild(document.createTextNode("\u271D"));
-
-// value = document.createElement("span");
-// value.appendChild(document.createTextNode("Morto"));
-
-// divStatus.appendChild(description);
-// divStatus.appendChild(symbol);
-// divStatus.appendChild(value);
-// console.log(divStatus);
