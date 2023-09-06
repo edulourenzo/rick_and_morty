@@ -69,11 +69,12 @@ async function main(params) {
     //??? URL.revokeObjectURL(imageObjectURL); ???
 
     //insert info in grid layout
-    spanId.textContent = character.id;
-    spanName.textContent = character.name;
-    spanStatus.textContent = character.status;
-    spanGender.textContent = character.gender;
-    
+    spanId.innerText = character.id;
+    spanName.innerText = character.name;
+    spanStatus.innerText = character.status;
+    spanGender.innerText = character.gender;
+
 }
 
 randomly.addEventListener("click", main);
+    
