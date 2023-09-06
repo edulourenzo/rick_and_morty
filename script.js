@@ -70,7 +70,7 @@ async function main(params) {
     //??? URL.revokeObjectURL(imageObjectURL); ???
 
     //insert info in grid layout
-    //{...}
+    
     
 }
 
