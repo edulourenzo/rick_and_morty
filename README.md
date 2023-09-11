@@ -97,7 +97,8 @@ Marque as tarefas concluidas!
 - [x] Criar função para sortear o número do personagem.
 - [x] Obter JSON do personagem sorteado.
 - [x] Estudar async/await vs. promisse/then.
-- [x] Inserir inputs do personagem sorteado. 
+- [x] Inserir inputs do personagem sorteado.
+- [x] Traduzir inputs do personagem sorteado.
 - [ ] Criar grid com os dados obtidos da API.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Customizar a div e os campos.
@@ -136,5 +137,6 @@ A data é formado por DD/MM/AA.
  Obter JSON do personagem sorteado | manhã | 24/08/23 | manhã | 24/08/23 | 15min |
 | Estudar async/await vs. promisse/then | manhã | 29/08/23 | manhã | 31/08/23 | 720min |
 | Inserir inputs do personagem sorteado | manhã | 06/09/23 | manhã | 06/09/23 | 60min |
+| Traduzir inputs do personagem sorteado | manhã | 11/09/23 | manhã | 11/09/23 | 60min |
 | | | | | | |
 | | | | | | |
