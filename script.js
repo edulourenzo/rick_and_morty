@@ -71,8 +71,51 @@ async function main(params) {
     //insert info in grid layout
     spanId.innerText = character.id;
     spanName.innerText = character.name;
-    spanStatus.innerText = character.status;
-    spanGender.innerText = character.gender;
+
+    let translation = '';
+    //('Alive', 'Dead' or 'unknown')
+    switch (character.status) {
+        case 'Alive':
+            translation = 'Vivo';
+            break;
+        
+        case 'Dead':
+            translation = 'Morto';
+            break;
+        
+        case 'unknown':
+            translation = 'Desconhecido';
+            break;
+
+        default:
+            translation = '';
+            break;
+    }
+    spanStatus.innerText = translation;
+
+    //('Female', 'Male', 'Genderless' or 'unknown')
+    switch (character.gender) {
+        case 'Female':
+            translation = 'Feminino';
+            break;
+
+        case 'Male':
+            translation = 'Masculino';
+            break;
+
+        case 'Genderless':
+            translation = 'Sem gênero';
+            break;
+
+        case 'unknown':
+            translation = 'desconhecido';
+            break;
+
+        default:
+            translation = '';
+            break;
+    }
+    spanGender.innerText = translation;
 
 }
 
