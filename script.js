@@ -2,6 +2,7 @@
 const spanId = document.getElementById("span-id");
 const spanName = document.getElementById("span-name");
 const spanStatus = document.getElementById("span-status");
+const spanSpecies = document.getElementById("span-species");
 const spanGender = document.getElementById("span-gender");
 const randomly = document.getElementById("randomly");
 
@@ -51,6 +52,8 @@ async function main(params) {
     response =  await fetch(`${apiCharacter}${characterNumber}`, init);
     const character = await response.json();
 
+    //console.log(character);
+
     //get url from response
     //character.image
     
@@ -71,51 +74,9 @@ async function main(params) {
     //insert info in grid layout
     spanId.innerText = character.id;
     spanName.innerText = character.name;
-
-    let translation = '';
-    //('Alive', 'Dead' or 'unknown')
-    switch (character.status) {
-        case 'Alive':
-            translation = 'Vivo';
-            break;
-        
-        case 'Dead':
-            translation = 'Morto';
-            break;
-        
-        case 'unknown':
-            translation = 'Desconhecido';
-            break;
-
-        default:
-            translation = '';
-            break;
-    }
-    spanStatus.innerText = translation;
-
-    //('Female', 'Male', 'Genderless' or 'unknown')
-    switch (character.gender) {
-        case 'Female':
-            translation = 'Feminino';
-            break;
-
-        case 'Male':
-            translation = 'Masculino';
-            break;
-
-        case 'Genderless':
-            translation = 'Sem gênero';
-            break;
-
-        case 'unknown':
-            translation = 'desconhecido';
-            break;
-
-        default:
-            translation = '';
-            break;
-    }
-    spanGender.innerText = translation;
+    spanStatus.innerText = character.status;
+    spanSpecies.innerText = character.species;
+    spanGender.innerText = character.gender;
 
 }
 
