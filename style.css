@@ -66,15 +66,21 @@ header {
     border: 3px solid #FFFF00;
 }
 
+button {
+    font-size: 36px;
+}
+
 footer {
     background: #33FF33;
     border: 3px solid #007700;
     text-align: center;
+    font-size: 18px;
 }
 
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    font-size: 24px;
 }
 
 .keys {
