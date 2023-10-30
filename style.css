@@ -74,15 +74,27 @@ footer {
 
 #grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 5fr;
 }
 
 .keys {
     text-align: right;
     background-color: pink;
+    border: solid #000000;
+    border-right: none;
+    border-radius: 5px 0px 0px 5px;
+    padding: 3px;
+    margin: 2px;
+    margin-right: 0px;
 }
 
 .values {
     text-align: left;
     background-color: aqua;
+    border: solid #000000;
+    border-left: none;
+    border-radius: 0px 5px 5px 0px;
+    padding: 3px;
+    margin: 2px;
+    margin-left: 0px;
 }
