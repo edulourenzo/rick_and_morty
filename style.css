@@ -66,15 +66,9 @@ header {
     border: 3px solid #FFFF00;
 }
 
-button {
-    font-size: 36px;
-}
-
-footer {
-    background: #33FF33;
-    border: 3px solid #007700;
-    text-align: center;
-    font-size: 18px;
+main {
+    display: flex;
+    flex-direction: column;
 }
 
 #grid-container {
@@ -103,4 +97,17 @@ footer {
     padding: 3px;
     margin: 2px;
     margin-left: 0px;
+}
+
+button {
+    font-size: 36px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+footer {
+    background: #33FF33;
+    border: 3px solid #007700;
+    text-align: center;
+    font-size: 18px;
 }
