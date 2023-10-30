@@ -89,7 +89,8 @@ Marque as tarefas concluidas!
 - [x] Estudar async/await vs. promisse/then.
 - [x] Inserir inputs do personagem sorteado.
 - [x] Traduzir inputs do personagem sorteado.
-- [ ] Criar grid com os dados obtidos da API.
+- [x] Desfazer tradução (incompatível com os nomes dos personagens adotados no Brasil).
+- [x] Criar grid layout com os dados obtidos da API.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Customizar a div e os campos.
 - [ ] Verificar capturas de erros.
@@ -126,5 +127,8 @@ A data é formado por DD/MM/AA.
 | Estudar async/await vs. promisse/then | manhã | 29/08/23 | manhã | 31/08/23 | 720min |
 | Inserir inputs do personagem sorteado | manhã | 06/09/23 | manhã | 06/09/23 | 60min |
 | Traduzir inputs do personagem sorteado | manhã | 11/09/23 | manhã | 11/09/23 | 60min |
+| Desfazer tradução | manhã | 12/09/23 | manhã | 12/09/23 | 30min |
+| Estudar Grid Layout | manhã | 30/10/23 | manhã | 30/10/23 | 105min |
+| Criar grid layout com os dados obtidos da API | manhã | 30/10/23 | manhã | 30/10/23 | 15min |
 | | | | | | |
 | | | | | | |

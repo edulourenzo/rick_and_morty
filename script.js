@@ -1,9 +1,9 @@
 //DOM elements
-const spanId = document.getElementById("span-id");
-const spanName = document.getElementById("span-name");
-const spanStatus = document.getElementById("span-status");
-const spanSpecies = document.getElementById("span-species");
-const spanGender = document.getElementById("span-gender");
+const divId = document.getElementById("div-id");
+const divName = document.getElementById("div-name");
+const divStatus = document.getElementById("div-status");
+const divSpecies = document.getElementById("div-species");
+const divGender = document.getElementById("div-gender");
 const randomly = document.getElementById("randomly");
 
 //Initialization of API
@@ -66,17 +66,17 @@ async function main(params) {
     
     //(future) set animation
     //{...}
-
+    
     //insert image in html
     image.src = imageObjectURL;
     //??? URL.revokeObjectURL(imageObjectURL); ???
 
     //insert info in grid layout
-    spanId.innerText = character.id;
-    spanName.innerText = character.name;
-    spanStatus.innerText = character.status;
-    spanSpecies.innerText = character.species;
-    spanGender.innerText = character.gender;
+    divId.innerText = character.id;
+    divName.innerText = character.name;
+    divStatus.innerText = character.status;
+    divSpecies.innerText = character.species;
+    divGender.innerText = character.gender;
 
 }
 

@@ -72,6 +72,17 @@ footer {
     text-align: center;
 }
 
-span {
-    margin: 5px;
+#grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.keys {
+    text-align: right;
+    background-color: pink;
+}
+
+.values {
+    text-align: left;
+    background-color: aqua;
 }
