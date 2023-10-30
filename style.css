@@ -71,6 +71,10 @@ main {
     flex-direction: column;
 }
 
+img {
+    margin: 0 auto;
+}
+
 #grid-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
