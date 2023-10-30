@@ -69,6 +69,7 @@ header {
 footer {
     background: #33FF33;
     border: 3px solid #007700;
+    text-align: center;
 }
 
 span {
