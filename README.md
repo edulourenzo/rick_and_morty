@@ -91,6 +91,7 @@ Marque as tarefas concluidas!
 - [x] Traduzir inputs do personagem sorteado.
 - [x] Desfazer tradução (incompatível com os nomes dos personagens adotados no Brasil).
 - [x] Criar grid layout com os dados obtidos da API.
+- [x] Redimensionar conteúdos.
 - [ ] Fazer o JS da animação do portal girando e crescendo.
 - [ ] Customizar a div e os campos.
 - [ ] Verificar capturas de erros.
