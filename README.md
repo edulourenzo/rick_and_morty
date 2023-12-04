@@ -130,5 +130,6 @@ A data é formado por DD/MM/AA.
 | Desfazer tradução | manhã | 12/09/23 | manhã | 12/09/23 | 30min |
 | Estudar Grid Layout | manhã | 30/10/23 | manhã | 30/10/23 | 105min |
 | Criar grid layout com os dados obtidos da API | manhã | 30/10/23 | manhã | 30/10/23 | 15min |
+| Redimensionar conteúdos | manhã | 04/12/23 | tarde | 04/12/23 | 180min |
 | | | | | | |
 | | | | | | |
