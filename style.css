@@ -35,20 +35,36 @@ img {
 
 
 html {
-    display: block;
+    /* display: block; default */
+    position: relative;
     height: 100%;
+    width: 100%;
+    box-sizing: border-box;
     overflow: hidden;
     background-color: white;
     border: 3px solid red;
 } 
 
 body {
-    max-height: 100vh;
-    aspect-ratio: 9/16;
-    margin: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    aspect-ratio: 9 / 16;
+    margin: auto ;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     overflow: hidden;
     background-color: #7777FF;
     border: 3px solid #000077;
+}
+
+header {
+    height: 12.5%;
+    background-color: #000000;
+    border: 3px solid #FFFF00;
 }
 
 h1{
@@ -59,12 +75,6 @@ h1{
     color: #0FAFC7;
     -webkit-text-stroke: 0.1px #9DE989;
     text-align: center;
-}
-
-header {
-    height: 12.5%;
-    background-color: #000000;
-    border: 3px solid #FFFF00;
 }
 
 main {
