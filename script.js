@@ -86,7 +86,20 @@ async function main(params) {
 }
 
 btnSort.addEventListener("click", main);
-window.addEventListener("onload", (event) => {
-    //Adicionar as funções de resize dos textos.
-})
-    
+window.addEventListener("load", (event) => {
+    resizeHeader();
+    resizeGrid();
+    resizeFooter();
+});
+
+function resizeHeader() {
+
+}
+
+function resizeGrid() {
+
+}
+
+function resizeFooter() {
+
+}
