@@ -70,7 +70,7 @@ header {
 h1{
     /* font-family: "Get Schwifty"; */
     font-family: "Ricky and Morty font";
-    font-size: 72px;
+    font-size: 20px;
     font-weight: bolder;
     color: #0FAFC7;
     -webkit-text-stroke: 0.1px #9DE989;
@@ -96,7 +96,7 @@ img {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: repeat(5, 1fr);
-    font-size: 30px;
+    font-size: 10px;
 }
 
 .keys {
@@ -122,8 +122,9 @@ img {
 }
 
 button {
+    box-sizing: border-box;
     height: 8.8%;
-    font-size: 36px;
+    font-size: 15px;
     width: 50%;
     margin: 0 auto;
     
@@ -134,5 +135,5 @@ footer {
     background: #33FF33;
     border: 3px solid #007700;
     text-align: center;
-    font-size: 18px;
+    font-size: 5px;
 }

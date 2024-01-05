@@ -4,7 +4,7 @@ const divName = document.getElementById("div-name");
 const divStatus = document.getElementById("div-status");
 const divSpecies = document.getElementById("div-species");
 const divGender = document.getElementById("div-gender");
-const randomly = document.getElementById("randomly");
+const btnSort = document.getElementById("btn-sort");
 
 //Initialization of API
 const apiCharacter = 'https://rickandmortyapi.com/api/character/';
@@ -19,6 +19,7 @@ const init = {
 //const myPromise = new Promise((resolve, reject) => {});
 //Promise.resolve("input").then(onfulfilled, onrejected);
 //Promise.reject("input").then(onfulfilled).catch(onrejected);
+//...
 // async function () => { 
 //     let x; 
 //     try {x = await new Promise.resolve("input");} 
@@ -26,17 +27,17 @@ const init = {
 
 let count = 2; //async safeguard (Rick and Morty).
 
+//get max number of characters
 fetch(apiCharacter, init)
     .then((response) => (response.json()))
     .then((data) => (count = data.info.count));
 
-async function getCount(number) {
-    const response = await fetch(apiCharacter, init);
-    const data = await response.json();
-    number = await data.info.count;
-    console.log(`O valor de number é: ${number}`);
-
-}
+// async function getCount(number) {
+//     const response = await fetch(apiCharacter, init);
+//     const data = await response.json();
+//     number = await data.info.count;
+//     console.log(`O valor de number é: ${number}`);
+// }
 
 function drawNumber(max) {
     return Math.floor(Math.random() * max) + 1;
@@ -78,7 +79,11 @@ async function main(params) {
     divSpecies.innerText = character.species;
     divGender.innerText = character.gender;
 
+    // let btnHeight = btnSort.offsetHeight * 0.75;
+    // btnSort.style.fontSize = btnHeight + 'px';
+    // console.log(btnSort.offsetHeight);
+
 }
 
-randomly.addEventListener("click", main);
+btnSort.addEventListener("click", main);
     
