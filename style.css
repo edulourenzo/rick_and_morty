@@ -105,7 +105,7 @@ img {
     border: solid #000000;
     border-right: none;
     border-radius: 5px 0px 0px 5px;
-    padding: 3px;
+    padding: 0px;
     margin: 0px;
     margin-right: 0px;
 }
@@ -116,7 +116,7 @@ img {
     border: solid #000000;
     border-left: none;
     border-radius: 0px 5px 5px 0px;
-    padding: 3px;
+    padding: 0px;
     margin: 0px;
     margin-left: 0px;
 }
