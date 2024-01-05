@@ -1,9 +1,9 @@
 //DOM elements
-const divId = document.getElementById("div-id");
-const divName = document.getElementById("div-name");
-const divStatus = document.getElementById("div-status");
-const divSpecies = document.getElementById("div-species");
-const divGender = document.getElementById("div-gender");
+const valId = document.getElementById("val-id");
+const valName = document.getElementById("val-name");
+const valStatus = document.getElementById("val-status");
+const valSpecies = document.getElementById("val-species");
+const valGender = document.getElementById("val-gender");
 const btnSort = document.getElementById("btn-sort");
 
 //Initialization of API
@@ -73,15 +73,18 @@ async function main(params) {
     //??? URL.revokeObjectURL(imageObjectURL); ???
 
     //insert info in grid layout
-    divId.innerText = character.id;
-    divName.innerText = character.name;
-    divStatus.innerText = character.status;
-    divSpecies.innerText = character.species;
-    divGender.innerText = character.gender;
+    valId.innerText = character.id;
+    valName.innerText = character.name;
+    valStatus.innerText = character.status;
+    valSpecies.innerText = character.species;
+    valGender.innerText = character.gender;
 
     // let btnHeight = btnSort.offsetHeight * 0.75;
     // btnSort.style.fontSize = btnHeight + 'px';
     // console.log(btnSort.offsetHeight);
+
+    // let keySibling = valId.previousElementSibling.offsetHeight;
+    // console.log(`Key = ${keySibling}`);
 
 }
 
