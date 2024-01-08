@@ -1,16 +1,20 @@
 //DOM elements
+const title = document.getElementsByTagName("h1");
+const gridCCntr = document.getElementById("grid-container");
 const valId = document.getElementById("val-id");
 const valName = document.getElementById("val-name");
 const valStatus = document.getElementById("val-status");
 const valSpecies = document.getElementById("val-species");
 const valGender = document.getElementById("val-gender");
-const btnSort = document.getElementById("btn-sort");
+const btnGenerate = document.getElementById("btn-generate");
+const footer = document.getElementsByTagName("footer");
+
 
 //Initialization of API
 const apiCharacter = 'https://rickandmortyapi.com/api/character/';
 const init = {
     method: 'GET',
-    headers: {
+    Titles: {
         Accept: 'application/json',
         "Content-type": 'aplication/json'
     }
@@ -78,31 +82,67 @@ async function main(params) {
     valStatus.innerText = character.status;
     valSpecies.innerText = character.species;
     valGender.innerText = character.gender;
-
-    // let btnHeight = btnSort.offsetHeight * 0.75;
-    // btnSort.style.fontSize = btnHeight + 'px';
-    // console.log(btnSort.offsetHeight);
-
-    // let keySibling = valId.previousElementSibling.offsetHeight;
-    // console.log(`Key = ${keySibling}`);
-
 }
 
-btnSort.addEventListener("click", main);
-window.addEventListener("load", (event) => {
-    resizeHeader();
-    resizeGrid();
-    resizeFooter();
-});
+function resizeTitle() {
 
-function resizeHeader() {
+    const newHTitle = title[0].parentElement.offsetHeight;
 
+    const textHTitle = newHTitle * 0.5;
+    title[0].style.fontSize = textHTitle + 'px';
+
+    const paddingTitle = newHTitle * 0.25;
+    title[0].style.padding = paddingTitle + 'px';
 }
 
 function resizeGrid() {
+    //Largest constant word for line break
+    const newHGrid = valSpecies.offsetHeight;
+    const textHGrid = newHGrid * 0.75;
+    const paddingGrid = newHGrid * 0.125 - 3;
+    // const cssValSpecies = window.getComputedStyle(valSpecies);
 
+    const numChildren = gridCCntr.childElementCount;
+    for(let i = 0; i < numChildren; i++) {
+        gridCCntr.children[i].style.fontSize = textHGrid + 'px';
+        gridCCntr.children[i].style.padding = paddingGrid + 'px';
+    }
+}
+
+function resizeButton() {
+    const newHButton = btnGenerate.offsetHeight;
+
+    const textHButton = newHButton * 0.5;
+    btnGenerate.style.fontSize = textHButton + 'px';
+
+    const paddingButton = newHButton * 0.25;
+    btnGenerate.style.padding = paddingButton + 'px';
 }
 
 function resizeFooter() {
 
+    const newHFooter = footer[0].offsetHeight;
+
+    //CORREÇÃO FUTURA: ajustar padding e border ao tamanho das fontes dinâmicas.
+    const textHFooter = (newHFooter * 0.8) - 6;
+    footer[0].style.fontSize = textHFooter + 'px';
+
+    const paddingFooter = newHFooter * 0.1;
+    footer[0].style.padding = paddingFooter + 'px';
 }
+
+
+btnGenerate.addEventListener("click", main);
+window.addEventListener("load", () => {
+    resizeTitle();
+    resizeGrid();
+    resizeButton();
+    resizeFooter();
+});
+
+window.addEventListener('resize', () => {
+    resizeTitle();
+    resizeGrid();
+    resizeButton();
+    resizeFooter();
+});

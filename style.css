@@ -75,6 +75,7 @@ h1{
     color: #0FAFC7;
     -webkit-text-stroke: 0.1px #9DE989;
     text-align: center;
+    line-height: 1;
 }
 
 main {
@@ -126,6 +127,7 @@ button {
     box-sizing: border-box;
     height: 8.8%;
     font-size: 15px;
+    line-height: 1;
     width: 50%;
     margin: 0 auto;
     
@@ -137,4 +139,5 @@ footer {
     border: 3px solid #007700;
     text-align: center;
     font-size: 5px;
+    line-height: 1;
 }
