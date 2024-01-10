@@ -20,6 +20,7 @@ const init = {
     }
 };
 
+//===== Promises =====
 //const myPromise = new Promise((resolve, reject) => {});
 //Promise.resolve("input").then(onfulfilled, onrejected);
 //Promise.reject("input").then(onfulfilled).catch(onrejected);
@@ -28,6 +29,7 @@ const init = {
 //     let x; 
 //     try {x = await new Promise.resolve("input");} 
 //     catch (err) {x = await new Promise.reject("input"); console.log(err);}}
+//====================
 
 let count = 2; //async safeguard (Rick and Morty).
 
@@ -86,49 +88,50 @@ async function main(params) {
 
 function resizeTitle() {
 
-    const newHTitle = title[0].parentElement.offsetHeight;
+    const titleHeight = title[0].parentElement.offsetHeight;
 
-    const textHTitle = newHTitle * 0.5;
-    title[0].style.fontSize = textHTitle + 'px';
+    const titleNewFontSize = titleHeight * 0.5;
+    title[0].style.fontSize = titleNewFontSize + 'px';
 
-    const paddingTitle = newHTitle * 0.25;
-    title[0].style.padding = paddingTitle + 'px';
+    const titleNewPadding = titleHeight * 0.25;
+    title[0].style.padding = titleNewPadding + 'px';
 }
 
 function resizeGrid() {
     //Largest constant word for line break
-    const newHGrid = valSpecies.offsetHeight;
-    const textHGrid = newHGrid * 0.75;
-    const paddingGrid = newHGrid * 0.125 - 3;
+    const gridHeight = valSpecies.parentElement.offsetHeight;
+    const rowHeight = gridHeight / 5;
+    const rowNewFontSize = rowHeight * 0.75;
+    const rowNewPadding = rowHeight * 0.125 - 3;
     // const cssValSpecies = window.getComputedStyle(valSpecies);
 
     const numChildren = gridCCntr.childElementCount;
     for(let i = 0; i < numChildren; i++) {
-        gridCCntr.children[i].style.fontSize = textHGrid + 'px';
-        gridCCntr.children[i].style.padding = paddingGrid + 'px';
+        gridCCntr.children[i].style.fontSize = rowNewFontSize + 'px';
+        gridCCntr.children[i].style.padding = rowNewPadding + 'px';
     }
 }
 
 function resizeButton() {
-    const newHButton = btnGenerate.offsetHeight;
+    const buttonHeight = btnGenerate.offsetHeight;
 
-    const textHButton = newHButton * 0.5;
-    btnGenerate.style.fontSize = textHButton + 'px';
+    const buttonNewFontSize = buttonHeight * 0.5;
+    btnGenerate.style.fontSize = buttonNewFontSize + 'px';
 
-    const paddingButton = newHButton * 0.25;
-    btnGenerate.style.padding = paddingButton + 'px';
+    const buttonNewPadding = buttonHeight * 0.25;
+    btnGenerate.style.padding = buttonNewPadding + 'px';
 }
 
 function resizeFooter() {
 
-    const newHFooter = footer[0].offsetHeight;
+    const footerHeight = footer[0].offsetHeight;
 
     //CORREÇÃO FUTURA: ajustar padding e border ao tamanho das fontes dinâmicas.
-    const textHFooter = (newHFooter * 0.8) - 6;
-    footer[0].style.fontSize = textHFooter + 'px';
+    const footerNewFontSize = (footerHeight * 0.8) - 6;
+    footer[0].style.fontSize = footerNewFontSize + 'px';
 
-    const paddingFooter = newHFooter * 0.1;
-    footer[0].style.padding = paddingFooter + 'px';
+    const footerNewPadding = footerHeight * 0.1;
+    footer[0].style.padding = footerNewPadding + 'px';
 }
 
 
