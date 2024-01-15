@@ -145,9 +145,8 @@ function resizeButton() {
 function resizeFooter() {
 
     const footerHeight = footer[0].offsetHeight;
-
-    //CORREÇÃO FUTURA: ajustar padding e border ao tamanho das fontes dinâmicas.
-    const footerNewFontSize = (footerHeight * 0.8) - 6;
+    
+    const footerNewFontSize = footerHeight * 0.8;
     footer[0].style.fontSize = footerNewFontSize + 'px';
 
     const footerNewPadding = footerHeight * 0.1;
