@@ -51,29 +51,29 @@ function drawNumber(max) {
 
 async function main(params) {
     let response = null;
-    
+
     //draw character number
     const characterNumber = drawNumber(count);
 
     //get json from API
-    response =  await fetch(`${apiCharacter}${characterNumber}`, init);
+    response = await fetch(`${apiCharacter}${characterNumber}`, init);
     const character = await response.json();
 
     //console.log(character);
 
     //get url from response
     //character.image
-    
+
     //get image from API
     response = await fetch(character.image, init);
     const imageBlob = await response.blob();
 
     // create object from image
     const imageObjectURL = URL.createObjectURL(imageBlob);
-    
+
     //(future) set animation
     //{...}
-    
+
     //insert image in html
     image.src = imageObjectURL;
     //??? URL.revokeObjectURL(imageObjectURL); ???
@@ -116,16 +116,16 @@ function resizeRows() {
     //12.25% padding-bottom
     //02.75% border-bottom
     //------
-    
+
     //Largest constant word for line break
     const gridHeight = valSpecies.parentElement.offsetHeight;
     const rowNewHeight = gridHeight * 0.176;
     const rowNewBorder = rowNewHeight * 0.0275;
-    const rowNewPadding = rowNewHeight * 0.1225; 
+    const rowNewPadding = rowNewHeight * 0.1225;
     const rowNewFontSize = rowNewHeight * 0.7;
 
     const numChildren = gridCCntr.childElementCount;
-    for(let i = 0; i < numChildren; i++) {
+    for (let i = 0; i < numChildren; i++) {
         gridCCntr.children[i].style.borderWidth = rowNewBorder + 'px';
         gridCCntr.children[i].style.padding = rowNewPadding + 'px';
         gridCCntr.children[i].style.fontSize = rowNewFontSize + 'px';
@@ -156,6 +156,7 @@ function resizeFooter() {
 
 
 btnGenerate.addEventListener("click", main);
+
 window.addEventListener("load", () => {
     resizeTitle();
     resizeRows();

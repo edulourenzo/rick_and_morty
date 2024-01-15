@@ -42,7 +42,6 @@ html {
     box-sizing: border-box;
     overflow: hidden;
     background-color: white;
-    border: 3px solid red;
 } 
 
 body {
@@ -59,14 +58,12 @@ body {
     left: 0;
     overflow: hidden;
     background-color: #7777FF;
-    border: 3px solid #000077;
 }
 
 header {
     box-sizing: border-box;
     height: 12.5%;
     background-color: #000000;
-    border: 3px solid #FFFF00;
 }
 
 h1{
@@ -129,9 +126,9 @@ img {
 button {
     box-sizing: border-box;
     height: 8.8%;
+    width: 50%;
     font-size: 15px;
     line-height: 1;
-    width: 50%;
     margin: 0 auto;
     
 }
@@ -140,7 +137,6 @@ footer {
     box-sizing: border-box;
     height: 2.5%;
     background: #33FF33;
-    border: 3px solid #007700;
     text-align: center;
     font-size: 5px;
     line-height: 1;
