@@ -97,18 +97,38 @@ function resizeTitle() {
     title[0].style.padding = titleNewPadding + 'px';
 }
 
-function resizeGrid() {
+function resizeRows() {
+    //=== Heigth of Grid ====
+    //4% of padding (2% * (top and botton))
+    //8% of gap (2% * (4 * spaces between rows))
+    //100% - 12% = 88% = 0.88
+    //=== Heigth of Rows ====
+    //88% / 5 = 17.6% = 0.176
+    //17.6 each row
+    //05.50% border
+    //24.50% padding
+    //70.00% content
+    //100% Total
+    //------
+    //02.75% border-top
+    //12.25% padding-top
+    //70.00% content
+    //12.25% padding-bottom
+    //02.75% border-bottom
+    //------
+    
     //Largest constant word for line break
     const gridHeight = valSpecies.parentElement.offsetHeight;
-    const rowHeight = gridHeight / 5;
-    const rowNewFontSize = rowHeight * 0.75;
-    const rowNewPadding = rowHeight * 0.125 - 3;
-    // const cssValSpecies = window.getComputedStyle(valSpecies);
+    const rowNewHeight = gridHeight * 0.176;
+    const rowNewBorder = rowNewHeight * 0.0275;
+    const rowNewPadding = rowNewHeight * 0.1225; 
+    const rowNewFontSize = rowNewHeight * 0.7;
 
     const numChildren = gridCCntr.childElementCount;
     for(let i = 0; i < numChildren; i++) {
-        gridCCntr.children[i].style.fontSize = rowNewFontSize + 'px';
+        gridCCntr.children[i].style.borderWidth = rowNewBorder + 'px';
         gridCCntr.children[i].style.padding = rowNewPadding + 'px';
+        gridCCntr.children[i].style.fontSize = rowNewFontSize + 'px';
     }
 }
 
@@ -138,14 +158,14 @@ function resizeFooter() {
 btnGenerate.addEventListener("click", main);
 window.addEventListener("load", () => {
     resizeTitle();
-    resizeGrid();
+    resizeRows();
     resizeButton();
     resizeFooter();
 });
 
 window.addEventListener('resize', () => {
     resizeTitle();
-    resizeGrid();
+    resizeRows();
     resizeButton();
     resizeFooter();
 });
