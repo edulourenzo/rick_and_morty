@@ -62,6 +62,7 @@ body {
 
 header {
     box-sizing: border-box;
+    position: relative;
     height: 12.5%;
     background-color: #000000;
 }
