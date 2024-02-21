@@ -1,4 +1,5 @@
 //DOM elements
+const header = document.getElementsByTagName("header");
 const title = document.getElementsByTagName("h1");
 const gridCCntr = document.getElementById("grid-container");
 const valId = document.getElementById("val-id");
@@ -88,7 +89,7 @@ async function main(params) {
 
 function resizeTitle() {
 
-    const titleHeight = title[0].parentElement.offsetHeight;
+    const titleHeight = header[0].offsetHeight;
 
     const titleNewFontSize = titleHeight * 0.5;
     title[0].style.fontSize = titleNewFontSize + 'px';
