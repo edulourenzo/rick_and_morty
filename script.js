@@ -1,6 +1,7 @@
 //DOM elements
 const header = document.getElementsByTagName("header");
 const title = document.getElementsByTagName("h1");
+const lightning = document.getElementById("lightning");
 const gridCCntr = document.getElementById("grid-container");
 const valId = document.getElementById("val-id");
 const valName = document.getElementById("val-name");
@@ -85,6 +86,9 @@ async function main(params) {
     valStatus.innerText = character.status;
     valSpecies.innerText = character.species;
     valGender.innerText = character.gender;
+
+    lightning.style.top = header[0].offsetHeight * 0.125 + "px";
+    lightning.style.display = "inline";
 }
 
 function resizeTitle() {
@@ -96,6 +100,10 @@ function resizeTitle() {
 
     const titleNewPadding = titleHeight * 0.25;
     title[0].style.padding = titleNewPadding + 'px';
+
+    console.log(`Header  H: ${header[0].offsetHeight}px`);
+    console.log(`Title   H: ${titleNewFontSize}px`);
+    console.log(`Padding H: ${titleNewPadding}px`);
 }
 
 function resizeRows() {
@@ -154,6 +162,7 @@ function resizeFooter() {
     footer[0].style.padding = footerNewPadding + 'px';
 }
 
+//function gifOverlayPassing() {}
 
 btnGenerate.addEventListener("click", main);
 
