@@ -11,7 +11,6 @@ const valGender = document.getElementById("val-gender");
 const btnGenerate = document.getElementById("btn-generate");
 const footer = document.getElementsByTagName("footer");
 
-
 //Initialization of API
 const apiCharacter = 'https://rickandmortyapi.com/api/character/';
 const init = {
@@ -86,13 +85,9 @@ async function main(params) {
     valStatus.innerText = character.status;
     valSpecies.innerText = character.species;
     valGender.innerText = character.gender;
-
-    lightning.style.top = header[0].offsetHeight * 0.125 + "px";
-    lightning.style.display = "inline";
 }
 
 function resizeTitle() {
-
     const titleHeight = header[0].offsetHeight;
 
     const titleNewFontSize = titleHeight * 0.5;
@@ -100,10 +95,6 @@ function resizeTitle() {
 
     const titleNewPadding = titleHeight * 0.25;
     title[0].style.padding = titleNewPadding + 'px';
-
-    console.log(`Header  H: ${header[0].offsetHeight}px`);
-    console.log(`Title   H: ${titleNewFontSize}px`);
-    console.log(`Padding H: ${titleNewPadding}px`);
 }
 
 function resizeRows() {
@@ -152,7 +143,6 @@ function resizeButton() {
 }
 
 function resizeFooter() {
-
     const footerHeight = footer[0].offsetHeight;
     
     const footerNewFontSize = footerHeight * 0.8;
@@ -162,7 +152,17 @@ function resizeFooter() {
     footer[0].style.padding = footerNewPadding + 'px';
 }
 
-//function gifOverlayPassing() {}
+function gifOverlayPassing() {
+    lightning.style.transition = "left 1.25s linear";
+    lightning.style.display = "inline";
+    lightning.style.left = header[0].offsetWidth - lightning.offsetWidth + "px";
+    lightning.ontransitionend = () => {
+        lightning.style.display = "none";
+        lightning.style.transition = "left 0s";
+        lightning.style.left = "0px";
+
+    }
+}
 
 btnGenerate.addEventListener("click", main);
 
@@ -171,6 +171,7 @@ window.addEventListener("load", () => {
     resizeRows();
     resizeButton();
     resizeFooter();
+    setTimeout(gifOverlayPassing, 750);
 });
 
 window.addEventListener('resize', () => {
