@@ -124,7 +124,7 @@ A data é formado por DD/MM/AA.
 | Usar .png para o portal | manhã | ??/??/23 | manhã | ??/??/23 | 30min |
 | Inserir conteúdo na div dinamicamente | tarde | 23/08/23 | tarde | 23/08/23 | 150min |
 | Criar função para sortear o número do personagem | tarde | 23/08/23 | tarde | 23/08/23 | 15min |
- Obter JSON do personagem sorteado | manhã | 24/08/23 | manhã | 24/08/23 | 15min |
+| Obter JSON do personagem sorteado | manhã | 24/08/23 | manhã | 24/08/23 | 15min |
 | Estudar async/await vs. promisse/then | manhã | 29/08/23 | manhã | 31/08/23 | 720min |
 | Inserir inputs do personagem sorteado | manhã | 06/09/23 | manhã | 06/09/23 | 60min |
 | Traduzir inputs do personagem sorteado | manhã | 11/09/23 | manhã | 11/09/23 | 60min |

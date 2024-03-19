@@ -1,154 +1,162 @@
 /* ========== CSS NORMALIZE ========== */
 
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-}
-  
-*, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0;
-    padding: 0;
-    /* font-weight: normal; */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-ol, ul {
-    list-style: none;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  /* font-weight: normal; */
+}
+
+ol,
+ul {
+  list-style: none;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* =================Fonte================== */
 
 @font-face {
-    font-family: "Ricky and Morty font";
-    src: url(font_Ricky_and_Morty.ttf)
-    format("TrueType");
+  font-family: "Ricky and Morty font";
+  src: url(font_Ricky_and_Morty.ttf) format("TrueType");
 }
 /* ======================================== */
 
-
 html {
-    /* display: block; default */
-    position: relative;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-color: white;
-} 
+  /* display: block; default */
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: white;
+}
 
 body {
-    box-sizing: border-box;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    max-height: 100%;
-    aspect-ratio: 9 / 16;
-    margin: auto ;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    background-color: #7777FF;
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  aspect-ratio: 9 / 16;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: #7777ff;
 }
 
 header {
-    box-sizing: border-box;
-    position: relative;
-    height: 12.5%;
-    background-color: #000000;
+  box-sizing: border-box;
+  position: relative;
+  height: 12.5%;
+  background-color: #000000;
 }
 
-h1{
-    /* font-family: "Get Schwifty"; */
-    font-family: "Ricky and Morty font";
-    font-size: 20px;
-    font-weight: bolder;
-    color: #0FAFC7;
-    -webkit-text-stroke: 0.1px #9DE989;
-    text-align: center;
-    line-height: 1;
+h1 {
+  /* font-family: "Get Schwifty"; */
+  font-family: "Ricky and Morty font";
+  font-size: 20px;
+  font-weight: bolder;
+  color: #0fafc7;
+  -webkit-text-stroke: 0.1px #9de989;
+  text-align: center;
+  line-height: 1;
 }
 
 #lightning {
-    display: none;
-    height: 75%;
-    position: absolute;
-    aspect-ratio: 1 / 1;
-    top: 12.5%;
-    left: 0px;
-    z-index: 1;
+  display: none;
+  height: 75%;
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  left: 0px;
+  top: 12.5%;
+  z-index: 1;
 }
 
 main {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    height: 85%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 85%;
 }
 
 img {
-    
-    height: 58.8%;
-    width: auto;
-    aspect-ratio: 1 / 1;
-    margin: 0 auto;
+  height: 58.8%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
 }
 
 #grid-container {
-    box-sizing: border-box;
-    height: 32.4%;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: repeat(5, 1fr);
-    row-gap: 2%;
-    font-size: 10px;
-    margin: 2% 0%;
+  box-sizing: border-box;
+  height: 32.4%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: repeat(5, 1fr);
+  row-gap: 2%;
+  font-size: 10px;
+  margin: 2% 0%;
 }
 
 .keys {
-    box-sizing: border-box;
-    background-color: pink;
-    border: 1px solid #000000;
-    border-right: none;
-    border-radius: 12.5% 0% 0% 12.5%;
-    text-align: right;
-    line-height: 1;
+  box-sizing: border-box;
+  background-color: pink;
+  border: 1px solid #000000;
+  border-right: none;
+  border-radius: 12.5% 0% 0% 12.5%;
+  text-align: right;
+  line-height: 1;
 }
 
 .values {
-    box-sizing: border-box;
-    background-color: aqua;
-    border: 1px solid #000000;
-    border-left: none;
-    border-radius: 0px 12.5px 12.5px 0px;
-    text-align: left;
-    line-height: 1;
+  box-sizing: border-box;
+  background-color: aqua;
+  border: 1px solid #000000;
+  border-left: none;
+  border-radius: 0px 12.5px 12.5px 0px;
+  text-align: left;
+  line-height: 1;
 }
 
 button {
-    box-sizing: border-box;
-    height: 8.8%;
-    width: 50%;
-    font-size: 15px;
-    line-height: 1;
-    margin: 0 auto;
-    
+  box-sizing: border-box;
+  height: 8.8%;
+  width: 50%;
+  font-size: 15px;
+  line-height: 1;
+  margin: 0 auto;
 }
 
 footer {
-    box-sizing: border-box;
-    height: 2.5%;
-    background: #33FF33;
-    text-align: center;
-    font-size: 5px;
-    line-height: 1;
+  box-sizing: border-box;
+  height: 2.5%;
+  background: #33ff33;
+  text-align: center;
+  font-size: 5px;
+  line-height: 1;
 }
