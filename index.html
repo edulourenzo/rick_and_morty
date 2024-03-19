@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rick and Morty</title>
+    <link rel="icon" href="favicon.ico" />
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>
-            Rick and Morty
-        </h1>
-        <img id="lightning" src="img_Lightning.gif">
+      <h1>Rick and Morty</h1>
+      <img id="lightning" src="img_Lightning.gif" />
     </header>
     <main>
-        <img id="image" src="img_Default.jpeg" alt="Randomly generated character image." width="300" height="300">
-        <div id="grid-container">
-            <!-- 
+      <img
+        id="image"
+        src="img_Default.jpeg"
+        alt="Randomly generated character image."
+        width="300"
+        height="300"
+      />
+      <div id="grid-container">
+        <!-- 
             <div>ID: 001/002</div>
             <div>Name: Rick and Morty</div>
             <div>Status: &star; &#x271D; &quest;</div>
             <div>Species: Humam
             <div>Gender: &female; &male; &cir;(genderless) &varnothing;(unknow)</div>
             -->
-            <div class="keys">Id: </div>
-            <div class="values" id="val-id"></div>
+        <div class="keys">Id:</div>
+        <div class="values" id="val-id"></div>
 
-            <div class="keys">Name: </div>
-            <div class="values" id="val-name"></div>
+        <div class="keys">Name:</div>
+        <div class="values" id="val-name"></div>
 
-            <div class="keys">Status: </div>
-            <div class="values" id="val-status"></div>
+        <div class="keys">Status:</div>
+        <div class="values" id="val-status"></div>
 
-            <div class="keys">Species: </div>
-            <div class="values" id="val-species"></div>
+        <div class="keys">Species:</div>
+        <div class="values" id="val-species"></div>
 
-            <div class="keys">Gender: </div>
-            <div class="values" id="val-gender"></div>
-        </div>
-        <button id="btn-generate">Generate</button>
+        <div class="keys">Gender:</div>
+        <div class="values" id="val-gender"></div>
+      </div>
+      <button id="btn-generate">Generate</button>
     </main>
-    <footer> Created by: @EduLourenzo</footer>
-</body>
-
+    <footer>Created by: @EduLourenzo</footer>
+  </body>
 </html>
