@@ -105,11 +105,15 @@ main {
   height: 85%;
 }
 
-img {
+#image {
   height: 58.8%;
   width: auto;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
+}
+
+#img-portal {
+  display: none;
 }
 
 #grid-container {
