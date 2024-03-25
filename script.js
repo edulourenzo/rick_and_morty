@@ -1,7 +1,8 @@
 //DOM elements
 const header = document.getElementsByTagName("header");
 const title = document.getElementsByTagName("h1");
-const imgLightning = document.getElementById("lightning");
+const imgLightning = document.getElementById("img-lightning");
+const audLightning = document.getElementById("aud-lightning");
 const gridCCntr = document.getElementById("grid-container");
 const valId = document.getElementById("val-id");
 const valName = document.getElementById("val-name");
@@ -10,8 +11,6 @@ const valSpecies = document.getElementById("val-species");
 const valGender = document.getElementById("val-gender");
 const btnGenerate = document.getElementById("btn-generate");
 const footer = document.getElementsByTagName("footer");
-
-const audLightning = new Audio("eletric_zap.mp3");
 
 //Initialization of API
 const apiCharacter = "https://rickandmortyapi.com/api/character/";
@@ -166,8 +165,6 @@ function gifOverlayPassing() {
   };
 }
 
-btnGenerate.addEventListener("click", main);
-
 window.addEventListener("load", () => {
   resizeTitle();
   resizeRows();
@@ -183,10 +180,7 @@ window.addEventListener("resize", () => {
   resizeFooter();
 });
 
-window.addEventListener("onmouseover", () => {
-  typeWriter.play();
-  console.log("Mouse se moveu");
-});
+btnGenerate.addEventListener("click", main);
 
 header[0].addEventListener("click", () => {
   gifOverlayPassing();
