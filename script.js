@@ -220,22 +220,11 @@ function portalAppearing() {
 //???usa opção "composite" para encadear animação de rotação???
 
 function gifOverlayPassing() {
-  //Separate features
-  //Create resize
-  //Create animation
-  //Append animation to object
-  //play animation
-  //??? new KeyframeEffect(target, keyframes, options) ???
-
-  imgLightning.style.transition = "left 1.25s linear";
-  imgLightning.style.display = "inline";
-  imgLightning.style.left =
-    header[0].offsetWidth - imgLightning.offsetWidth + "px";
-  imgLightning.ontransitionend = () => {
-    imgLightning.style.display = "none";
-    imgLightning.style.transition = "left 0s";
-    imgLightning.style.left = "0px";
-  };
+  const rightBorder = header[0].offsetWidth - header[0].offsetHeight * 0.75;
+  imgLightning.animate(
+    [{ display: "inline" }, { left: rightBorder + "px" }],
+    1250
+  );
 }
 
 window.addEventListener("load", () => {
