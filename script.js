@@ -88,6 +88,8 @@ async function main(params) {
   valStatus.innerText = character.status;
   valSpecies.innerText = character.species;
   valGender.innerText = character.gender;
+
+  portalAppearing();
 }
 
 function resizeTitle() {
@@ -155,7 +157,76 @@ function resizeFooter() {
   footer[0].style.padding = footerNewPadding + "px";
 }
 
+function resizePortal() {
+  //+5% margin due to irregular circumference
+  const hypotenuse = image.width * Math.sqrt(2) * 1.05;
+  const moveUp = (hypotenuse - image.height) / 2;
+
+  imgPortal.style.width = hypotenuse + "px";
+  imgPortal.style.height = hypotenuse + "px";
+
+  imgPortal.style.top = -moveUp + "px";
+}
+
+function portalAppearing() {
+  // const myAnimation = new Animation(
+  //   new KeyframeEffect(
+  //     /*target*/,
+  //     [/*Keyframe*/ {/*from*/}, {/*to*/},],
+  //     {/*KeyframeEffectOptions*/, /*duration: , easing: */}
+  //   )
+  // );
+  // myAnimation.play();
+
+  //https://developer.mozilla.org/en-US/docs/Web/API/Element/animate
+  // The Element interface's animate() method
+  // is a shortcut method which
+  // creates a new Animation,
+  // applies it to the element,
+  // then plays the animation.
+  // It returns the created Animation object instance
+  imgPortal.animate(
+    [
+      //Keyframes
+      {
+        //from
+        display: "none",
+        transform: "rotate(0deg) scale(0)",
+      },
+      {
+        //to
+        display: "inline",
+        transform: "rotate(720deg) scale(1)",
+      },
+    ],
+    {
+      // KeyframeAnimationOptions
+      duration: 750,
+      easing: "ease-out",
+    }
+  );
+  imgPortal.style.display = "inline";
+}
+
+//https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#callbacks_e_promises
+//Quando o bolo ou a garrafa acabar...
+
+//nommingCake.onfinish = endGame;
+//drinking.onfinish = endGame;
+
+//...ou Alice chega ao fim de sua animação
+//aliceChange.onfinish = endGame;
+
+//???usa opção "composite" para encadear animação de rotação???
+
 function gifOverlayPassing() {
+  //Separate features
+  //Create resize
+  //Create animation
+  //Append animation to object
+  //play animation
+  //??? new KeyframeEffect(target, keyframes, options) ???
+
   imgLightning.style.transition = "left 1.25s linear";
   imgLightning.style.display = "inline";
   imgLightning.style.left =
@@ -173,6 +244,7 @@ window.addEventListener("load", () => {
   resizeButton();
   resizeFooter();
   gifOverlayPassing();
+  resizePortal();
 });
 
 window.addEventListener("resize", () => {
@@ -180,6 +252,7 @@ window.addEventListener("resize", () => {
   resizeRows();
   resizeButton();
   resizeFooter();
+  resizePortal();
 });
 
 btnGenerate.addEventListener("click", main);

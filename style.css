@@ -31,10 +31,10 @@ ul {
   list-style: none;
 }
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 
 /* =================Fonte================== */
 
@@ -66,7 +66,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
+  overflow: visible;
   background-color: #7777ff;
 }
 
@@ -90,8 +90,9 @@ h1 {
 
 #img-lightning {
   display: none;
-  height: 75%;
   position: absolute;
+  height: 75%;
+  width: auto;
   aspect-ratio: 1 / 1;
   left: 0px;
   top: 12.5%;
@@ -103,6 +104,7 @@ main {
   display: flex;
   flex-direction: column;
   height: 85%;
+  position: relative;
 }
 
 #image {
@@ -114,6 +116,9 @@ main {
 
 #img-portal {
   display: none;
+  position: absolute;
+  align-self: center;
+  z-index: 2;
 }
 
 #grid-container {
