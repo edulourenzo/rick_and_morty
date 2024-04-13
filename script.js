@@ -46,14 +46,28 @@ fetch(apiCharacter, init)
 //     const response = await fetch(apiCharacter, init);
 //     const data = await response.json();
 //     number = await data.info.count;
-//     console.log(`O valor de number é: ${number}`);
 // }
 
 function drawNumber(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
+let keepSpinning = false;
+
 async function main(params) {
+  /*
+Script da animação.
+1. Clicar no botão.
+-- dispara o evento click e chama a função main().
+-- chama a função portalAppearing() de  dentro da main()
+2. Animar a aparição do portal. ??? async ???
+3. Enquanto o segundo fetch não for status:200 
+-- chama a função spinPortal.
+4. Se a resposta for ok.
+4.1. Trocar a imagem.
+4.2. Esmaecer portal.
+*/
+
   let response = null;
 
   //draw character number
@@ -61,14 +75,14 @@ async function main(params) {
 
   //get json from API
   response = await fetch(`${apiCharacter}${characterNumber}`, init);
+  portalAppearing();
   const character = await response.json();
-
-  //console.log(character);
 
   //get url from response
   //character.image
 
   //get image from API
+  const myPromise = new Promise((resolve, reject) => {});
   response = await fetch(character.image, init);
   const imageBlob = await response.blob();
 
@@ -88,8 +102,6 @@ async function main(params) {
   valStatus.innerText = character.status;
   valSpecies.innerText = character.species;
   valGender.innerText = character.gender;
-
-  portalAppearing();
 }
 
 function resizeTitle() {
@@ -168,7 +180,7 @@ function resizePortal() {
   imgPortal.style.top = -moveUp + "px";
 }
 
-function portalAppearing() {
+function portalAppearing(/*target*/) {
   // const myAnimation = new Animation(
   //   new KeyframeEffect(
   //     /*target*/,
@@ -178,14 +190,9 @@ function portalAppearing() {
   // );
   // myAnimation.play();
 
-  //https://developer.mozilla.org/en-US/docs/Web/API/Element/animate
-  // The Element interface's animate() method
-  // is a shortcut method which
-  // creates a new Animation,
-  // applies it to the element,
-  // then plays the animation.
-  // It returns the created Animation object instance
-  imgPortal.animate(
+  console.log("Called appear portal.");
+
+  const anmAppearing = imgPortal.animate(
     [
       //Keyframes
       {
@@ -203,9 +210,63 @@ function portalAppearing() {
       // KeyframeAnimationOptions
       duration: 750,
       easing: "ease-out",
+      fill: "forwards",
     }
   );
-  imgPortal.style.display = "inline";
+
+  anmAppearing.addEventListener("finish", () => {
+    if (keepSpinning) {
+      // slow
+      portalSpinning();
+    } else {
+      // fast
+      portalFading();
+    }
+  });
+}
+
+function portalSpinning() {
+  console.log("Called spin portal.");
+  const anmSpinning = imgPortal.animate(
+    [
+      {
+        transform: "rotate(0deg)",
+      },
+      { transform: "rotate(720deg)" },
+    ],
+    {
+      duration: 750,
+      fill: "forwards",
+    }
+  );
+
+  anmSpinning.addEventListener("finish", () => {
+    if (keepSpinning) {
+      // slow
+      portalSpinning();
+    } else {
+      // fast
+      portalFading();
+    }
+  });
+}
+
+function portalFading() {
+  console.log("Called fade portal.");
+  const anmFading = imgPortal.animate(
+    [
+      {
+        opacity: 1,
+        display: "inline",
+      },
+      { opacity: 0, display: "none" },
+    ],
+    {
+      duration: 750,
+      easing: "ease-out",
+      fill: "forwards",
+    }
+  );
 }
 
 //https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#callbacks_e_promises
