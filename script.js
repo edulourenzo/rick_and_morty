@@ -37,15 +37,16 @@ const init = {
 
 let count = 2; //async safeguard (Rick and Morty).
 
-//get max number of characters
+//asynchronously get max number of characters
 fetch(apiCharacter, init)
   .then((response) => response.json())
   .then((data) => (count = data.info.count));
 
+//synchronously get max number of characters
 // async function getCount(number) {
-//     const response = await fetch(apiCharacter, init);
-//     const data = await response.json();
-//     number = await data.info.count;
+//   const response = await fetch(apiCharacter, init);
+//   const data = await response.json();
+//   number = await data.info.count;
 // }
 
 function drawNumber(max) {
@@ -67,22 +68,28 @@ Script da animação.
 4.1. Trocar a imagem.
 4.2. Esmaecer portal.
 */
+  console.log("=========================  ");
 
   let response = null;
 
-  //draw character number
+  // draw character number
   const characterNumber = drawNumber(count);
 
-  //get json from API
-  response = await fetch(`${apiCharacter}${characterNumber}`, init);
+  btnGenerate.disabled = true;
+  console.log("Botão travado.");
+
+  keepSpinning = true;
   portalAppearing();
+
+  // get json from API
+  response = await fetch(`${apiCharacter}${characterNumber}`, init);
   const character = await response.json();
 
   //get url from response
   //character.image
 
   //get image from API
-  const myPromise = new Promise((resolve, reject) => {});
+  // const myPromise = new Promise((resolve, reject) => {});
   response = await fetch(character.image, init);
   const imageBlob = await response.blob();
 
@@ -95,6 +102,8 @@ Script da animação.
   //insert image in html
   image.src = imageObjectURL;
   //??? URL.revokeObjectURL(imageObjectURL); ???
+
+  keepSpinning = false;
 
   //insert info in grid layout
   valId.innerText = character.id;
@@ -197,11 +206,13 @@ function portalAppearing(/*target*/) {
       //Keyframes
       {
         //from
+        opacity: 1,
         display: "none",
         transform: "rotate(0deg) scale(0)",
       },
       {
         //to
+        opacity: 1,
         display: "inline",
         transform: "rotate(720deg) scale(1)",
       },
@@ -215,6 +226,7 @@ function portalAppearing(/*target*/) {
   );
 
   anmAppearing.addEventListener("finish", () => {
+    console.log("Appear finished.");
     if (keepSpinning) {
       // slow
       portalSpinning();
@@ -230,12 +242,19 @@ function portalSpinning() {
   const anmSpinning = imgPortal.animate(
     [
       {
+        opacity: 1,
+        display: "inline",
         transform: "rotate(0deg)",
       },
-      { transform: "rotate(720deg)" },
+      {
+        opacity: 1,
+        display: "inline",
+        transform: "rotate(360deg)",
+      },
     ],
     {
       duration: 750,
+      easing: "linear",
       fill: "forwards",
     }
   );
@@ -258,8 +277,13 @@ function portalFading() {
       {
         opacity: 1,
         display: "inline",
+        transform: "rotate(0deg)",
       },
-      { opacity: 0, display: "none" },
+      {
+        opacity: 0,
+        display: "none",
+        transform: "rotate(0deg)",
+      },
     ],
     {
       duration: 750,
@@ -267,18 +291,11 @@ function portalFading() {
       fill: "forwards",
     }
   );
+  anmFading.addEventListener("finish", () => {
+    btnGenerate.disabled = false;
+    console.log("Botão destravado.");
+  });
 }
-
-//https://developer.mozilla.org/pt-BR/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API#callbacks_e_promises
-//Quando o bolo ou a garrafa acabar...
-
-//nommingCake.onfinish = endGame;
-//drinking.onfinish = endGame;
-
-//...ou Alice chega ao fim de sua animação
-//aliceChange.onfinish = endGame;
-
-//???usa opção "composite" para encadear animação de rotação???
 
 function gifOverlayPassing() {
   const rightBorder = header[0].offsetWidth - header[0].offsetHeight * 0.75;
