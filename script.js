@@ -1,4 +1,6 @@
-//DOM elements
+"use strict";
+
+// ===== DOM elements =====
 const header = document.getElementsByTagName("header");
 const title = document.getElementsByTagName("h1");
 const imgLightning = document.getElementById("img-lightning");
@@ -14,7 +16,7 @@ const valGender = document.getElementById("val-gender");
 const btnGenerate = document.getElementById("btn-generate");
 const footer = document.getElementsByTagName("footer");
 
-//Initialization of API
+// Initialization of API
 const apiCharacter = "https://rickandmortyapi.com/api/character/";
 const init = {
   method: "GET",
@@ -24,25 +26,25 @@ const init = {
   },
 };
 
-//===== Promises =====
-//const myPromise = new Promise((resolve, reject) => {});
-//Promise.resolve("input").then(onfulfilled, onrejected);
-//Promise.reject("input").then(onfulfilled).catch(onrejected);
-//...
+// ===== Promises =====
+// const myPromise = new Promise((resolve, reject) => {});
+// Promise.resolve("input").then(onfulfilled, onrejected);
+// Promise.reject("input").then(onfulfilled).catch(onrejected);
+// ...
 // async function () => {
 //     let x;
 //     try {x = await new Promise.resolve("input");}
 //     catch (err) {x = await new Promise.reject("input"); console.log(err);}}
-//====================
+// ====================
 
 let count = 2; //async safeguard (Rick and Morty).
 
-//asynchronously get max number of characters
+// asynchronously get max number of characters
 fetch(apiCharacter, init)
   .then((response) => response.json())
   .then((data) => (count = data.info.count));
 
-//synchronously get max number of characters
+// synchronously get max number of characters
 // async function getCount(number) {
 //   const response = await fetch(apiCharacter, init);
 //   const data = await response.json();
@@ -53,7 +55,9 @@ function drawNumber(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
+// Binary semaphores
 let keepSpinning = false;
+let finishedAppear = false;
 
 async function main(params) {
   /*
@@ -85,10 +89,12 @@ Script da animação.
   response = await fetch(`${apiCharacter}${characterNumber}`, init);
   const character = await response.json();
 
-  //get url from response
-  //character.image
+  console.log(typeof character);
 
-  //get image from API
+  // get url from response
+  // character.image
+
+  // get image from API
   // const myPromise = new Promise((resolve, reject) => {});
   response = await fetch(character.image, init);
   const imageBlob = await response.blob();
@@ -96,23 +102,25 @@ Script da animação.
   // create object from image
   const imageObjectURL = URL.createObjectURL(imageBlob);
 
-  //(future) set animation
-  //{...}
-
-  //insert image in html
+  // insert image in html
   image.src = imageObjectURL;
-  //??? URL.revokeObjectURL(imageObjectURL); ???
+  // ??? URL.revokeObjectURL(imageObjectURL); ???
 
   keepSpinning = false;
 
-  //insert info in grid layout
-  valId.innerText = character.id;
-  valName.innerText = character.name;
-  valStatus.innerText = character.status;
-  valSpecies.innerText = character.species;
-  valGender.innerText = character.gender;
+  // insert info in grid layout
+  fillGrid(character);
 }
 
+function fillGrid(data) {
+  valId.innerText = data.id;
+  valName.innerText = data.name;
+  valStatus.innerText = data.status;
+  valSpecies.innerText = data.species;
+  valGender.innerText = data.gender;
+}
+
+// ===== Resize functions =====
 function resizeTitle() {
   const titleHeight = header[0].offsetHeight;
 
@@ -124,26 +132,26 @@ function resizeTitle() {
 }
 
 function resizeRows() {
-  //=== Heigth of Grid ====
-  //4% of padding (2% * (top and botton))
-  //8% of gap (2% * (4 * spaces between rows))
-  //100% - 12% = 88% = 0.88
-  //=== Heigth of Rows ====
-  //88% / 5 = 17.6% = 0.176
-  //17.6 each row
-  //05.50% border
-  //24.50% padding
-  //70.00% content
-  //100% Total
-  //------
-  //02.75% border-top
-  //12.25% padding-top
-  //70.00% content
-  //12.25% padding-bottom
-  //02.75% border-bottom
-  //------
+  // === Heigth of Grid ====
+  // 4% of padding (2% * (top and botton))
+  // 8% of gap (2% * (4 * spaces between rows))
+  // 100% - 12% = 88% = 0.88
+  // === Heigth of Rows ====
+  // 88% / 5 = 17.6% = 0.176
+  // 17.6 each row
+  // 05.50% border
+  // 24.50% padding
+  // 70.00% content
+  // 100% Total
+  // ------
+  // 02.75% border-top
+  // 12.25% padding-top
+  // 70.00% content
+  // 12.25% padding-bottom
+  // 02.75% border-bottom
+  // ------
 
-  //Largest constant word for line break
+  // Largest constant word for line break
   const gridHeight = valSpecies.parentElement.offsetHeight;
   const rowNewHeight = gridHeight * 0.176;
   const rowNewBorder = rowNewHeight * 0.0275;
@@ -179,7 +187,7 @@ function resizeFooter() {
 }
 
 function resizePortal() {
-  //+5% margin due to irregular circumference
+  // +5% margin due to irregular circumference
   const hypotenuse = image.width * Math.sqrt(2) * 1.05;
   const moveUp = (hypotenuse - image.height) / 2;
 
@@ -189,6 +197,7 @@ function resizePortal() {
   imgPortal.style.top = -moveUp + "px";
 }
 
+// ===== Animation functions =====
 function portalAppearing(/*target*/) {
   // const myAnimation = new Animation(
   //   new KeyframeEffect(
@@ -203,15 +212,15 @@ function portalAppearing(/*target*/) {
 
   const anmAppearing = imgPortal.animate(
     [
-      //Keyframes
+      // Keyframes
       {
-        //from
+        // from
         opacity: 1,
         display: "none",
         transform: "rotate(0deg) scale(0)",
       },
       {
-        //to
+        // to
         opacity: 1,
         display: "inline",
         transform: "rotate(720deg) scale(1)",
@@ -305,6 +314,7 @@ function gifOverlayPassing() {
   );
 }
 
+// ===== Events =====
 window.addEventListener("load", () => {
   resizeTitle();
   resizeRows();
