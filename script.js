@@ -89,27 +89,29 @@ Script da animação.
   response = await fetch(`${apiCharacter}${characterNumber}`, init);
   const character = await response.json();
 
-  console.log(typeof character);
-
   // get url from response
   // character.image
 
   // get image from API
-  // const myPromise = new Promise((resolve, reject) => {});
   response = await fetch(character.image, init);
   const imageBlob = await response.blob();
 
+  keepSpinning = false;
+
+  // insert image blob in html
+  setImage(imageBlob);
+
+  // insert info in grid layout
+  fillGrid(character);
+}
+
+function setImage(blob) {
   // create object from image
-  const imageObjectURL = URL.createObjectURL(imageBlob);
+  const imageObjectURL = URL.createObjectURL(blob);
 
   // insert image in html
   image.src = imageObjectURL;
   // ??? URL.revokeObjectURL(imageObjectURL); ???
-
-  keepSpinning = false;
-
-  // insert info in grid layout
-  fillGrid(character);
 }
 
 function fillGrid(data) {
