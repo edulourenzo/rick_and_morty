@@ -37,14 +37,14 @@ const init = {
 //     catch (err) {x = await new Promise.reject("input"); console.log(err);}}
 // ====================
 
-let count = 2; //async safeguard (Rick and Morty).
+let count = 2; // Async safeguard (Rick and Morty).
 
-// asynchronously get max number of characters
+// Asynchronously get max number of characters
 fetch(apiCharacter, init)
   .then((response) => response.json())
   .then((data) => (count = data.info.count));
 
-// synchronously get max number of characters
+// Synchronously get max number of characters
 // async function getCount(number) {
 //   const response = await fetch(apiCharacter, init);
 //   const data = await response.json();
@@ -55,61 +55,47 @@ function drawNumber(max) {
   return Math.floor(Math.random() * max) + 1;
 }
 
-// Binary semaphores
-let keepSpinning = false;
-let finishedAppear = false;
+// Binary semaphore
+let readyData = false;
+
+// Params
+let character = {};
+let imageBlob = new Blob();
 
 async function main(params) {
-  /*
-Script da animação.
-1. Clicar no botão.
--- dispara o evento click e chama a função main().
--- chama a função portalAppearing() de  dentro da main()
-2. Animar a aparição do portal. ??? async ???
-3. Enquanto o segundo fetch não for status:200 
--- chama a função spinPortal.
-4. Se a resposta for ok.
-4.1. Trocar a imagem.
-4.2. Esmaecer portal.
-*/
-  console.log("=========================  ");
-
   let response = null;
 
-  // draw character number
+  // btnGenerate enabled in event finish portalFading()
+  btnGenerate.disabled = true;
+  readyData = false;
+
+  // Animation objects instances
+  const anmFading = portalFading();
+  const anmSpinning = portalSpinning(anmFading);
+  const anmAppearing = portalAppearing(anmFading, anmSpinning); // Fast and Slow
+
+  anmAppearing.play();
+
+  // Draw character number
   const characterNumber = drawNumber(count);
 
-  btnGenerate.disabled = true;
-  console.log("Botão travado.");
-
-  keepSpinning = true;
-  portalAppearing();
-
-  // get json from API
+  // Get json from API
   response = await fetch(`${apiCharacter}${characterNumber}`, init);
-  const character = await response.json();
+  character = await response.json();
 
-  // get url from response
-  // character.image
-
-  // get image from API
+  // Get image URL in response (character.image)
+  // Get image from API
   response = await fetch(character.image, init);
-  const imageBlob = await response.blob();
+  imageBlob = await response.blob();
 
-  keepSpinning = false;
-
-  // insert image blob in html
-  setImage(imageBlob);
-
-  // insert info in grid layout
-  fillGrid(character);
+  readyData = true;
 }
 
 function setImage(blob) {
-  // create object from image
+  // Create object from image
   const imageObjectURL = URL.createObjectURL(blob);
 
-  // insert image in html
+  // Insert image in html
   image.src = imageObjectURL;
   // ??? URL.revokeObjectURL(imageObjectURL); ???
 }
@@ -200,112 +186,130 @@ function resizePortal() {
 }
 
 // ===== Animation functions =====
-function portalAppearing(/*target*/) {
+function portalAppearing(hookAnmFast, hookAnmSlow) {
   // const myAnimation = new Animation(
   //   new KeyframeEffect(
   //     /*target*/,
-  //     [/*Keyframe*/ {/*from*/}, {/*to*/},],
+  //     [/*Keyframes*/ {/*from*/}, {/*to*/},],
   //     {/*KeyframeEffectOptions*/, /*duration: , easing: */}
   //   )
   // );
   // myAnimation.play();
 
-  console.log("Called appear portal.");
-
-  const anmAppearing = imgPortal.animate(
-    [
-      // Keyframes
+  const anmAppear = new Animation(
+    new KeyframeEffect(
+      imgPortal, // Target
+      [
+        // Keyframes
+        {
+          // From
+          opacity: 1,
+          display: "none",
+          transform: "rotate(0deg) scale(0)",
+        },
+        {
+          // To
+          opacity: 1,
+          display: "inline",
+          transform: "rotate(720deg) scale(1)",
+        },
+      ],
       {
-        // from
-        opacity: 1,
-        display: "none",
-        transform: "rotate(0deg) scale(0)",
-      },
-      {
-        // to
-        opacity: 1,
-        display: "inline",
-        transform: "rotate(720deg) scale(1)",
-      },
-    ],
-    {
-      // KeyframeAnimationOptions
-      duration: 750,
-      easing: "ease-out",
-      fill: "forwards",
-    }
+        // KeyframeEffectOptions
+        duration: 750,
+        easing: "ease-out",
+        // fill: "forwards",
+      }
+    ),
+    document.timeline
   );
 
-  anmAppearing.addEventListener("finish", () => {
-    console.log("Appear finished.");
-    if (keepSpinning) {
-      // slow
-      portalSpinning();
+  anmAppear.addEventListener("finish", () => {
+    if (readyData) {
+      // Fast
+      setImage(imageBlob);
+      fillGrid(character);
+      hookAnmFast.play(); // portalFading()
     } else {
-      // fast
-      portalFading();
+      // Slow
+      hookAnmSlow.play(); // portalSpinning()
     }
   });
+
+  return anmAppear;
 }
 
-function portalSpinning() {
-  console.log("Called spin portal.");
-  const anmSpinning = imgPortal.animate(
-    [
+function portalSpinning(hookAnimation) {
+  const anmSpin = new Animation(
+    new KeyframeEffect(
+      imgPortal,
+      [
+        {
+          opacity: 1,
+          display: "inline",
+          transform: "rotate(0deg)",
+        },
+        {
+          opacity: 1,
+          display: "inline",
+          transform: "rotate(360deg)",
+        },
+      ],
       {
-        opacity: 1,
-        display: "inline",
-        transform: "rotate(0deg)",
-      },
-      {
-        opacity: 1,
-        display: "inline",
-        transform: "rotate(360deg)",
-      },
-    ],
-    {
-      duration: 750,
-      easing: "linear",
-      fill: "forwards",
-    }
+        duration: 750,
+        easing: "linear",
+        // fill: "forwards",
+        // iterations: 3,
+      }
+    ),
+    document.timeline
   );
 
-  anmSpinning.addEventListener("finish", () => {
-    if (keepSpinning) {
-      // slow
-      portalSpinning();
+  anmSpin.addEventListener("finish", () => {
+    if (readyData) {
+      // Fast
+      setImage(imageBlob);
+      fillGrid(character);
+      hookAnimation.play(); // portalFading()
     } else {
-      // fast
-      portalFading();
+      // Slow
+      anmSpin.play(); // Loop
     }
   });
+
+  return anmSpin;
 }
 
 function portalFading() {
-  console.log("Called fade portal.");
-  const anmFading = imgPortal.animate(
-    [
+  const anmFade = new Animation(
+    new KeyframeEffect(
+      imgPortal,
+      [
+        {
+          opacity: 1,
+          display: "inline",
+          transform: "rotate(0deg)",
+        },
+        {
+          opacity: 0,
+          display: "none",
+          transform: "rotate(0deg)",
+        },
+      ],
       {
-        opacity: 1,
-        display: "inline",
-        transform: "rotate(0deg)",
-      },
-      {
-        opacity: 0,
-        display: "none",
-        transform: "rotate(0deg)",
-      },
-    ],
-    {
-      duration: 750,
-      easing: "ease-out",
-      fill: "forwards",
-    }
+        duration: 750,
+        easing: "ease-out",
+        fill: "forwards",
+      }
+    ),
+    document.timeline
   );
-  anmFading.addEventListener("finish", () => {
+
+  anmFade.addEventListener("finish", () => {
     btnGenerate.disabled = false;
-    console.log("Botão destravado.");
   });
+
+  return anmFade;
 }
 
 function gifOverlayPassing() {
