@@ -89,6 +89,13 @@ async function main(params) {
   imageBlob = await response.blob();
 
   readyData = true;
+
+  // variable boolean to lock/unlock custom mouse cursor
+  // get position relative by button
+  // mirror mouse cursor
+  // rotate the mouse cursor relative to the center of the button
+  // create shooting animation, from the center of the cursor to the center of the button
+  // add laser sound
 }
 
 function setImage(blob) {
@@ -339,6 +346,16 @@ window.addEventListener("resize", () => {
 });
 
 btnGenerate.addEventListener("click", main);
+
+btnGenerate.addEventListener("mouseover", (event) => {
+  btnGenerate.style.cursor = 'url("crs_Portal_gun_1.cur"), auto';
+
+  console.log(`(x:y) => (${event.offsetX}:${event.offsetY})`);
+});
+
+// btnGenerate.addEventListener("mouseout", () => {
+//   btnGenerate.style.cursor = "auto";
+// });
 
 header[0].addEventListener("click", () => {
   gifOverlayPassing();
