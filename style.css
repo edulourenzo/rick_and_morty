@@ -151,6 +151,11 @@ main {
   text-align: left;
   line-height: 1;
 }
+#cursor-portal-gun {
+  display: none;
+  position: absolute;
+  z-index: 3;
+}
 
 button {
   box-sizing: border-box;
@@ -168,4 +173,8 @@ footer {
   text-align: center;
   font-size: 5px;
   line-height: 1;
+}
+
+.portal-gun {
+  cursor: url("crs_Portal_gun_1.cur");
 }
