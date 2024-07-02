@@ -1,8 +1,10 @@
 "use strict";
 
 // ===== DOM elements =====
-const header = document.getElementsByTagName("header");
-const title = document.getElementsByTagName("h1");
+const html = document.getElementsByTagName("html")[0];
+const mainTag = document.getElementsByTagName("main")[0];
+const header = document.getElementsByTagName("header")[0];
+const title = document.getElementsByTagName("h1")[0];
 const imgLightning = document.getElementById("img-lightning");
 const audLightning = document.getElementById("aud-lightning");
 const image = document.getElementById("image");
@@ -13,8 +15,9 @@ const valName = document.getElementById("val-name");
 const valStatus = document.getElementById("val-status");
 const valSpecies = document.getElementById("val-species");
 const valGender = document.getElementById("val-gender");
+const crsPortalGun = document.getElementById("cursor-portal-gun");
 const btnGenerate = document.getElementById("btn-generate");
-const footer = document.getElementsByTagName("footer");
+const footer = document.getElementsByTagName("footer")[0];
 
 // Initialization of API
 const apiCharacter = "https://rickandmortyapi.com/api/character/";
@@ -57,6 +60,7 @@ function drawNumber(max) {
 
 // Binary semaphore
 let readyData = false;
+let cursorLocked = false;
 
 // Params
 let character = {};
@@ -89,14 +93,13 @@ async function main(params) {
   imageBlob = await response.blob();
 
   readyData = true;
-
-  // variable boolean to lock/unlock custom mouse cursor
-  // get position relative by button
-  // mirror mouse cursor
-  // rotate the mouse cursor relative to the center of the button
-  // create shooting animation, from the center of the cursor to the center of the button
-  // add laser sound
 }
+// variable boolean to lock/unlock custom mouse cursor
+// get position relative by button
+// mirror mouse cursor
+// rotate the mouse cursor relative to the center of the button
+// create shooting animation, from the center of the cursor to the center of the button
+// add laser sound
 
 function setImage(blob) {
   // Create object from image
@@ -117,13 +120,13 @@ function fillGrid(data) {
 
 // ===== Resize functions =====
 function resizeTitle() {
-  const titleHeight = header[0].offsetHeight;
+  const titleHeight = header.offsetHeight;
 
   const titleNewFontSize = titleHeight * 0.5;
-  title[0].style.fontSize = titleNewFontSize + "px";
+  title.style.fontSize = titleNewFontSize + "px";
 
   const titleNewPadding = titleHeight * 0.25;
-  title[0].style.padding = titleNewPadding + "px";
+  title.style.padding = titleNewPadding + "px";
 }
 
 function resizeRows() {
@@ -172,13 +175,13 @@ function resizeButton() {
 }
 
 function resizeFooter() {
-  const footerHeight = footer[0].offsetHeight;
+  const footerHeight = footer.offsetHeight;
 
   const footerNewFontSize = footerHeight * 0.8;
-  footer[0].style.fontSize = footerNewFontSize + "px";
+  footer.style.fontSize = footerNewFontSize + "px";
 
   const footerNewPadding = footerHeight * 0.1;
-  footer[0].style.padding = footerNewPadding + "px";
+  footer.style.padding = footerNewPadding + "px";
 }
 
 function resizePortal() {
@@ -320,7 +323,7 @@ function portalFading() {
 }
 
 function gifOverlayPassing() {
-  const rightBorder = header[0].offsetWidth - header[0].offsetHeight * 0.75;
+  const rightBorder = header.offsetWidth - header.offsetHeight * 0.75;
   imgLightning.animate(
     [{ display: "inline" }, { left: rightBorder + "px" }],
     1250
@@ -345,19 +348,47 @@ window.addEventListener("resize", () => {
   resizePortal();
 });
 
+// ==== Separate mouse and touch events ===
+
 btnGenerate.addEventListener("click", main);
 
-btnGenerate.addEventListener("mouseover", (event) => {
-  btnGenerate.style.cursor = 'url("crs_Portal_gun_1.cur"), auto';
+btnGenerate.addEventListener("mousedown", () => {
+  cursorLocked = true;
+  console.log("Cursor travado!");
+});
 
+btnGenerate.addEventListener("touchmove", (ev) => {
+  const rectX = mainTag.getBoundingClientRect().left;
+  const rectY = mainTag.getBoundingClientRect().top;
+  const touchX = ev.touches[ev.touches.length - 1].clientX;
+  const touchY = ev.touches[ev.touches.length - 1].clientY;
+  const centerCrsX = crsPortalGun.width / 2;
+  const centerCrsY = crsPortalGun.height / 2;
+
+  crsPortalGun.style.visibility = "visible";
+  crsPortalGun.style.left = `${touchX - rectX - centerCrsX}px`;
+  crsPortalGun.style.top = `${touchY - rectY - centerCrsY}px`;
+
+  // Create image tag in HTML.
+  // start with hide
+  // On touch reveal image
+  // move image with coordinate of touch
+});
+
+btnGenerate.addEventListener("mouseover", (event) => {
+  // btnGenerate.style.cursor = 'url("crs_Portal_gun_1.cur"), auto';
+  html.style.cursor = 'url("crs_Portal_gun_1.cur"), auto';
   console.log(`(x:y) => (${event.offsetX}:${event.offsetY})`);
 });
 
 // btnGenerate.addEventListener("mouseout", () => {
-//   btnGenerate.style.cursor = "auto";
+//   if (!cursorLocked) {
+//     btnGenerate.style.cursor = "auto";
+//     console.log("Destravado!");
+//   }
 // });
 
-header[0].addEventListener("click", () => {
+header.addEventListener("click", () => {
   gifOverlayPassing();
   audLightning.play();
 });

@@ -151,9 +151,10 @@ main {
   text-align: left;
   line-height: 1;
 }
+
 #cursor-portal-gun {
-  display: none;
   position: absolute;
+  visibility: hidden;
   z-index: 3;
 }
 
