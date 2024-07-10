@@ -54,12 +54,18 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 
 ## Estratégia
 
-- Criar um card.
-- O card terá o título de "Rick & Morty".
-- Obter um personagem aleatório da API.
+- Criar um card na proporção 16:9.
+- O card terá Título, corpo e rodapé.
+- O título será "Rick & Morty".
+- O corpo terá Imagem, descrição e botão.
+- O rodapé será um link para o GitHub.
+- Será obtido dados de um personagem aleatório da API.
 - O card terá a imagem do personagem no topo.
-- O card terá a descrição do personagem na base.
-- O card terá um botão de sortear outro personagem.
+- O card terá a descrição do personagem no meio.
+- O card terá o botão de sortear um personagem aleatório.
+- O título terá uma animação de um raio.
+- A imagem terá uma animação de um portal.
+- O botão terá uma animação de tiro laser.
 
 ## To-Do List
 
