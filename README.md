@@ -62,7 +62,7 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 - O card terá a descrição do personagem no meio.
 - O card terá o botão na base.
 - O rodapé será um link para o GitHub.
-- O botão de sorteará um personagem aleatório.
+- O botão sorteará um personagem aleatório.
 - Será obtido dados de um personagem aleatório da API.
 - O título terá uma animação de um raio.
 - A imagem terá uma animação de um portal.
