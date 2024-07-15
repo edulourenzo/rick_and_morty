@@ -58,13 +58,14 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 - O card terá Título, corpo e rodapé.
 - O título será "Rick & Morty".
 - O corpo terá Imagem, descrição e botão.
-- O rodapé será um link para o GitHub.
-- Será obtido dados de um personagem aleatório da API.
 - O card terá a imagem do personagem no topo.
 - O card terá a descrição do personagem no meio.
-- O card terá o botão de sortear um personagem aleatório.
+- O card terá o botão na base.
+- O rodapé será um link para o GitHub.
+- Será obtido dados de um personagem aleatório da API.
 - O título terá uma animação de um raio.
 - A imagem terá uma animação de um portal.
+- O botão de sortear um personagem aleatório.
 - O botão terá uma animação de tiro laser.
 
 ## To-Do List
