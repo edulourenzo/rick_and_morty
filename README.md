@@ -99,10 +99,23 @@ Marque as tarefas concluidas!
 - [x] Desfazer tradução (incompatível com os nomes dos personagens adotados no Brasil).
 - [x] Criar grid layout com os dados obtidos da API.
 - [x] Redimensionar conteúdos.
-- [ ] Fazer o JS da animação do portal girando e crescendo.
+- [x] Estudar sobre animações.
+- [x] Fazer o JS animar gif de raio.
+- [x] Adicionar efeito sonoro ao raio.
+- [x] Adicionar icone da página.
+- [x] Fazer o JS da animação do portal girando
+- [x] Fazer o JS ampliar o portal.
+- [x] Fazer o JS esmaecer o portal.
+- [x] Interligar as animações em sequência.
+- [x] Sincronizar a inserção de dados após a animação.
+- [x] Estudar sobre ponteiro, clique e toque.
+- [x] Capturar arraste do ponteiro.
+- [ ] Criar animação de tiro de raio laser.
+- [ ] Adicionar efeito sonoro ao tiro.
 - [ ] Customizar a div e os campos.
 - [ ] Verificar capturas de erros.
 - [ ] Testar rede e conexão pela ferramenta do browser.
+- [ ] Testar uso e vazamento de memória pela ferramenta do browser.
 - [ ] Postar no Linkedin e redes sociais.
 
 ## Tabela de tempo
