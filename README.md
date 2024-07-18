@@ -54,7 +54,7 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 
 ## Estratégia
 
-- Criar um card na proporção 16:9.
+- Criar um card na proporção 9:16.
 - O card terá Título, corpo e rodapé.
 - O título será "Rick & Morty".
 - O corpo terá Imagem, descrição e botão.
@@ -124,5 +124,21 @@ Tabela contendo os temas estudados, junto com os links de referências e as dura
 
 | Descrição | Link | Duração |
 |:----------|:----:|--------:|
-||||
-||||
+| Estrutura de arquivos do projeto | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/Dealing_with_files) | Curta |
+|Estrutura da página | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/HTML/Introduction_to_HTML/Document_and_website_structure) | Curta |
+| Linguagem de Marcação de Hipertexto (HTML) | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/HTML) | Curta |
+| Folhas de Estilo em Cascata (CSS) | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/CSS) | Curta |
+| JavaScript (JS) | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript) | Média |
+| Modelo de Objeto de Documento (DOM) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model) | Longa |
+| Tipos de exibição | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display) | Média |
+| Proporção da tela | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) | Curta |
+| Valores e unidades CSS | [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units) | Longa |
+| Fontes personalizadas | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) | Curta |
+|  |  |  |
+|  |  |  |
+
+Referências gerais:
+
+- [APIs da Web](https://developer.mozilla.org/pt-BR/docs/Web/API#specifications)
+- [Interfaces](https://developer.mozilla.org/en-US/docs/Web/API#interfaces)
+- [Eventos](https://developer.mozilla.org/en-US/docs/Web/Events)
