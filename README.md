@@ -7,7 +7,7 @@ Sumário:
 1. [Paleta de cores](#paleta-de-cores)
 1. [Estratégia](#estratégia)
 1. [To-Do List](#to-do-list)
-1. [Tabela de tempo](#tabela-de-tempo)
+1. [Tabela de estudos](#tabela-de-estudos)
 
 ## Introdução
 
@@ -70,7 +70,7 @@ As cores pincipais foram advindas da imagem "Portal" e se necessário cores adic
 
 ## To-Do List
 
-Marque as tarefas concluidas!
+Lista de tarefas concluidas e futuras para manter o histórico de afazeres.
 
 - [x] Criar repositório no GitHub.
 - [x] Criar Readme.md.
@@ -117,3 +117,12 @@ Marque as tarefas concluidas!
 - [ ] Testar rede e conexão pela ferramenta do browser.
 - [ ] Testar uso e vazamento de memória pela ferramenta do browser.
 - [ ] Postar no Linkedin e redes sociais.
+
+## Tabela de estudos
+
+Tabela contendo os temas estudados, junto com os links de referências e as durações de estudos.
+
+| Descrição | Link | Duração |
+|:----------|:----:|--------:|
+||||
+||||
