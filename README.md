@@ -130,15 +130,24 @@ Tabela contendo os temas estudados, junto com os links de referências e as dura
 | Folhas de Estilo em Cascata (CSS) | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/CSS) | Curta |
 | JavaScript (JS) | [MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript) | Média |
 | Modelo de Objeto de Documento (DOM) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Document_Object_Model) | Longa |
-| Tipos de exibição | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display) | Média |
+| Tipos de exibição (display) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display) | Média |
 | Proporção da tela | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) | Curta |
 | Valores e unidades CSS | [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units) | Longa |
-| Fontes personalizadas | [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face) | Curta |
+| Fontes personalizadas | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/@font-face) | Curta |
+| Exibição em grade (grid) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_grid_layout) | Média |
+| Obtenção de recursos na rede (Fetch API) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch) | Média |
+| Operações assíncronas (Promise) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise) | Longa |
+| Funções de retorno de chamada (método then( )) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) | Média |
+| Funções assícronas (async) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/async_function) | Longa |
+| Operador de aguardo de cumprimento de promessas (await) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/await) | Longa |
+| Blocos de teste (try...catch) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/try...catch) | Média |
+| Lançamento de exceção (throw) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/throw) | Média |
+| Notação de Objetos JavaScript (JSON) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON) | Média |
 |  |  |  |
 |  |  |  |
 
 Referências gerais:
 
 - [APIs da Web](https://developer.mozilla.org/pt-BR/docs/Web/API#specifications)
-- [Interfaces](https://developer.mozilla.org/en-US/docs/Web/API#interfaces)
+- [Interfaces](https://developer.mozilla.org/pt-BR/docs/Web/API#interfaces)
 - [Eventos](https://developer.mozilla.org/en-US/docs/Web/Events)
