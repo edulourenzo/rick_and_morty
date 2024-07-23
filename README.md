@@ -143,7 +143,21 @@ Tabela contendo os temas estudados, junto com os links de referências e as dura
 | Blocos de teste (try...catch) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/try...catch) | Média |
 | Lançamento de exceção (throw) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/throw) | Média |
 | Notação de Objetos JavaScript (JSON) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/JSON) | Média |
-|  |  |  |
+| Interface de Imagem | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement#constructor) | Curta |
+| Arquivo de dados brutos imutáveis ( Binary Large OBject (Blob)) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Blob) | Média |
+| Transfomações (transform ) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/transform) | Longa |
+| Transições (CSSTransition) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CSSTransition) | Longa |
+| Interface de áudio (HTMLAudioElement) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement) | Longa |
+| API de animações da web | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) | Longa |
+| Interface de Animação (Animation ) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Animation) | Longa |
+| Interface de Quadros-chave (KeyframeEffect) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect) | Longa |
+| Interface da linha do tempo da animação (AnimationTimeline ) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/AnimationTimeline) | Curta |
+| Usando animações | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_animations/Using_CSS_animations) | Longa |
+| Cursor | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/cursor) | Curta |
+| Interface de evento do mouse (MouseEvent) | [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/MouseEvent) | Média |
+| Interface de evento de toque (TouchEvent) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent) | Média |
+| Interface de toque (Touch) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Touch) | Média |
+| Interface da lista de toque (TouchList) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/TouchList) | Média |
 |  |  |  |
 
 Referências gerais:
