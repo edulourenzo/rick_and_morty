@@ -158,8 +158,9 @@ Tabela contendo os temas estudados, junto com os links de referências e as dura
 | Interface de evento de toque (TouchEvent) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent) | Média |
 | Interface de toque (Touch) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Touch) | Média |
 | Interface da lista de toque (TouchList) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/TouchList) | Média |
-| Borbulhamento de eventos | [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Event_bubbling) | Média |
 | Evento de ponteiro | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events) | Média |
+| Borbulhamento de eventos | [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Event_bubbling) | Média |
+| Método para prevenir predefinição (preventDefault) | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault) | Média |
 |  |  |  |
 |  |  |  |
 
