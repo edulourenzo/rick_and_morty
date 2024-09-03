@@ -348,44 +348,55 @@ window.addEventListener("resize", () => {
   resizePortal();
 });
 
-// ==== Separate mouse and touch events ===
+// ==== Mouse and touch events ===
 
-btnGenerate.addEventListener("click", main);
+// Math.atan2(y, x);
 
-btnGenerate.addEventListener("mousedown", () => {
-  cursorLocked = true;
-  console.log("Cursor travado!");
-});
-
-btnGenerate.addEventListener("touchmove", (ev) => {
-  const rectX = mainTag.getBoundingClientRect().left;
-  const rectY = mainTag.getBoundingClientRect().top;
-  const touchX = ev.touches[ev.touches.length - 1].clientX;
-  const touchY = ev.touches[ev.touches.length - 1].clientY;
-  const centerCrsX = crsPortalGun.width / 2;
-  const centerCrsY = crsPortalGun.height / 2;
+btnGenerate.addEventListener("pointerdown", (evtPtrDown) => {
+  btnGenerate.setPointerCapture(evtPtrDown.pointerId);
+  evtPtrDown.preventDefault();
 
   crsPortalGun.style.visibility = "visible";
-  crsPortalGun.style.left = `${touchX - rectX - centerCrsX}px`;
-  crsPortalGun.style.top = `${touchY - rectY - centerCrsY}px`;
+  // followCursor(evtPtrDown);
 
-  // Create image tag in HTML.
-  // start with hide
-  // On touch reveal image
-  // move image with coordinate of touch
+  btnGenerate.addEventListener("pointermove", followCursor);
+
+  btnGenerate.addEventListener(
+    "pointerup",
+    () => {
+      btnGenerate.removeEventListener("pointermove", followCursor);
+      crsPortalGun.style.visibility = "hidden";
+      main();
+    },
+    { once: true }
+  );
 });
 
-btnGenerate.addEventListener("mouseover", (event) => {
-  // btnGenerate.style.cursor = 'url("crs_Portal_gun_1.cur"), auto';
-  html.style.cursor = 'url("crs_Portal_gun_1.cur"), auto';
-  console.log(`(x:y) => (${event.offsetX}:${event.offsetY})`);
-});
+// [ ] When pointerdown in btnGenerate chage cursor to img
+// [X] Active setPointerCapture
+// [ ] Calcule the polar coordinate angle between img and cursor
+// [ ] Rotate the cursor
+// [ ] When pointerup trigger the animation of laser.
+// [ ] Starts the main function.
 
-// btnGenerate.addEventListener("mouseout", () => {
-//   if (!cursorLocked) {
-//     btnGenerate.style.cursor = "auto";
-//     console.log("Destravado!");
-//   }
+// btnGenerate.addEventListener("touchmove", (ev) => {
+//   // Study about ev.preventDefault();
+
+//   const mainRectX = mainTag.getBoundingClientRect().left;
+//   const mainRectY = mainTag.getBoundingClientRect().top;
+//   const lastTouchX = ev.touches[ev.touches.length - 1].clientX;
+//   const lastTouchY = ev.touches[ev.touches.length - 1].clientY;
+//   const centerCrsX = crsPortalGun.width / 2;
+//   const centerCrsY = crsPortalGun.height / 2;
+
+//   crsPortalGun.style.visibility = "visible";
+//   crsPortalGun.style.left = `${lastTouchX - mainRectX - centerCrsX}px`;
+//   crsPortalGun.style.top = `${lastTouchY - mainRectY - centerCrsY}px`;
+
+//   // [X] Create image tag in HTML.
+//   // [X] start with hide
+//   // [X] On touch reveal image
+//   // [X] move image with coordinate of touch
 // });
 
 header.addEventListener("click", () => {
