@@ -372,6 +372,17 @@ btnGenerate.addEventListener("pointerdown", (evtPtrDown) => {
   );
 });
 
+function followCursor(evtPtrMove) {
+  const mainRectX = mainTag.getBoundingClientRect().left;
+  const mainRectY = mainTag.getBoundingClientRect().top;
+
+  // console.log(`Mouse: (${ev.clientX}, ${ev.clientY})`);
+  // console.log(`Tela : (${ev.clientX - mainRectX}, ${ev.clientY - mainRectY})`);
+
+  crsPortalGun.style.left = `${evtPtrMove.layerX}px`;
+  crsPortalGun.style.top = `${evtPtrMove.layerY}px`;
+}
+
 // [ ] When pointerdown in btnGenerate chage cursor to img
 // [X] Active setPointerCapture
 // [ ] Calcule the polar coordinate angle between img and cursor
