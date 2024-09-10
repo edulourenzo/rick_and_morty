@@ -155,6 +155,8 @@ main {
 #cursor-portal-gun {
   position: absolute;
   visibility: hidden;
+  left: 0px;
+  top: 0px;
   z-index: 3;
 }
 

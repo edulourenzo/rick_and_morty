@@ -2,6 +2,7 @@
 
 // ===== DOM elements =====
 const html = document.getElementsByTagName("html")[0];
+const body = document.getElementsByTagName("body")[0];
 const mainTag = document.getElementsByTagName("main")[0];
 const header = document.getElementsByTagName("header")[0];
 const title = document.getElementsByTagName("h1")[0];
@@ -352,35 +353,60 @@ window.addEventListener("resize", () => {
 
 // Math.atan2(y, x);
 
-btnGenerate.addEventListener("pointerdown", (evtPtrDown) => {
-  btnGenerate.setPointerCapture(evtPtrDown.pointerId);
-  evtPtrDown.preventDefault();
+btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
+  btnGenerate.setPointerCapture(ptrDownEvt.pointerId);
+  ptrDownEvt.preventDefault();
 
+  const borderWidth =
+    (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
+    2;
+  const borderHeight =
+    (html.getBoundingClientRect().height -
+      body.getBoundingClientRect().height) /
+    2;
+
+  crsPortalGun.style.left = `${ptrDownEvt.clientX - borderWidth}px`;
+  crsPortalGun.style.top = `${ptrDownEvt.clientY - borderHeight}px`;
+  // btnGenerate.style.cursor = "none";
   crsPortalGun.style.visibility = "visible";
-  // followCursor(evtPtrDown);
 
   btnGenerate.addEventListener("pointermove", followCursor);
 
   btnGenerate.addEventListener(
     "pointerup",
     () => {
+      // crsPortalGun.style.visibility = "hidden";
+      btnGenerate.style.cursor = "auto";
+
       btnGenerate.removeEventListener("pointermove", followCursor);
-      crsPortalGun.style.visibility = "hidden";
+
       main();
     },
     { once: true }
   );
 });
 
-function followCursor(evtPtrMove) {
-  const mainRectX = mainTag.getBoundingClientRect().left;
-  const mainRectY = mainTag.getBoundingClientRect().top;
+function followCursor(ptrMoveEvt) {
+  // screenX/Y = Monitor;
+  // pageX/Y = Page;
+  // clientX/Y = Window;
+  // layerX/Y
 
-  // console.log(`Mouse: (${ev.clientX}, ${ev.clientY})`);
-  // console.log(`Tela : (${ev.clientX - mainRectX}, ${ev.clientY - mainRectY})`);
+  // Client (X, Y):(0,0) = (Left, Up) [Screen Plane]
+  // Window (X, -Y):(0, 0-MaxY) = (Left, Down) [Cartesian Plane]
 
-  crsPortalGun.style.left = `${evtPtrMove.layerX}px`;
-  crsPortalGun.style.top = `${evtPtrMove.layerY}px`;
+  // console.log(ptrMoveEvt);
+
+  const borderWidth =
+    (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
+    2;
+  const borderHeight =
+    (html.getBoundingClientRect().height -
+      body.getBoundingClientRect().height) /
+    2;
+
+  crsPortalGun.style.left = `${ptrMoveEvt.clientX - borderWidth}px`;
+  crsPortalGun.style.top = `${ptrMoveEvt.clientY - borderHeight}px`;
 }
 
 // [ ] When pointerdown in btnGenerate chage cursor to img
@@ -389,20 +415,6 @@ function followCursor(evtPtrMove) {
 // [ ] Rotate the cursor
 // [ ] When pointerup trigger the animation of laser.
 // [ ] Starts the main function.
-
-// btnGenerate.addEventListener("touchmove", (ev) => {
-//   // Study about ev.preventDefault();
-
-//   const mainRectX = mainTag.getBoundingClientRect().left;
-//   const mainRectY = mainTag.getBoundingClientRect().top;
-//   const lastTouchX = ev.touches[ev.touches.length - 1].clientX;
-//   const lastTouchY = ev.touches[ev.touches.length - 1].clientY;
-//   const centerCrsX = crsPortalGun.width / 2;
-//   const centerCrsY = crsPortalGun.height / 2;
-
-//   crsPortalGun.style.visibility = "visible";
-//   crsPortalGun.style.left = `${lastTouchX - mainRectX - centerCrsX}px`;
-//   crsPortalGun.style.top = `${lastTouchY - mainRectY - centerCrsY}px`;
 
 //   // [X] Create image tag in HTML.
 //   // [X] start with hide
