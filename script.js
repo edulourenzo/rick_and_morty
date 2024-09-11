@@ -357,17 +357,8 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   btnGenerate.setPointerCapture(ptrDownEvt.pointerId);
   ptrDownEvt.preventDefault();
 
-  const borderWidth =
-    (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
-    2;
-  const borderHeight =
-    (html.getBoundingClientRect().height -
-      body.getBoundingClientRect().height) /
-    2;
-
-  crsPortalGun.style.left = `${ptrDownEvt.clientX - borderWidth}px`;
-  crsPortalGun.style.top = `${ptrDownEvt.clientY - borderHeight}px`;
-  // btnGenerate.style.cursor = "none";
+  moveCursor(ptrDownEvt.clientX, ptrDownEvt.clientY);
+  btnGenerate.style.cursor = "none";
   crsPortalGun.style.visibility = "visible";
 
   btnGenerate.addEventListener("pointermove", followCursor);
@@ -375,11 +366,12 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   btnGenerate.addEventListener(
     "pointerup",
     () => {
-      // crsPortalGun.style.visibility = "hidden";
+      crsPortalGun.style.visibility = "hidden";
       btnGenerate.style.cursor = "auto";
 
       btnGenerate.removeEventListener("pointermove", followCursor);
 
+      // Call the function that animates the laser beam.
       main();
     },
     { once: true }
@@ -390,13 +382,15 @@ function followCursor(ptrMoveEvt) {
   // screenX/Y = Monitor;
   // pageX/Y = Page;
   // clientX/Y = Window;
-  // layerX/Y
-
   // Client (X, Y):(0,0) = (Left, Up) [Screen Plane]
   // Window (X, -Y):(0, 0-MaxY) = (Left, Down) [Cartesian Plane]
-
   // console.log(ptrMoveEvt);
 
+  moveCursor(ptrMoveEvt.clientX, ptrMoveEvt.clientY);
+  // Rotate cursor aiming at the center of the image
+}
+
+function moveCursor(x, y) {
   const borderWidth =
     (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
     2;
@@ -405,8 +399,8 @@ function followCursor(ptrMoveEvt) {
       body.getBoundingClientRect().height) /
     2;
 
-  crsPortalGun.style.left = `${ptrMoveEvt.clientX - borderWidth}px`;
-  crsPortalGun.style.top = `${ptrMoveEvt.clientY - borderHeight}px`;
+  crsPortalGun.style.left = `${x - borderWidth}px`;
+  crsPortalGun.style.top = `${y - borderHeight}px`;
 }
 
 // [ ] When pointerdown in btnGenerate chage cursor to img
