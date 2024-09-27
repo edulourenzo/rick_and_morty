@@ -351,17 +351,16 @@ window.addEventListener("resize", () => {
 
 // ==== Mouse and touch events ===
 
-// Math.atan2(y, x);
-
 btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   btnGenerate.setPointerCapture(ptrDownEvt.pointerId);
   ptrDownEvt.preventDefault();
 
-  moveCursor(ptrDownEvt.clientX, ptrDownEvt.clientY);
-  btnGenerate.style.cursor = "none";
+  polarCursor(ptrDownEvt);
+
+  // btnGenerate.style.cursor = "none";
   crsPortalGun.style.visibility = "visible";
 
-  btnGenerate.addEventListener("pointermove", followCursor);
+  btnGenerate.addEventListener("pointermove", polarCursor);
 
   btnGenerate.addEventListener(
     "pointerup",
@@ -369,7 +368,7 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
       crsPortalGun.style.visibility = "hidden";
       btnGenerate.style.cursor = "auto";
 
-      btnGenerate.removeEventListener("pointermove", followCursor);
+      btnGenerate.removeEventListener("pointermove", polarCursor);
 
       // Call the function that animates the laser beam.
       main();
@@ -378,43 +377,64 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   );
 });
 
-function followCursor(ptrMoveEvt) {
-  // screenX/Y = Monitor;
-  // pageX/Y = Page;
-  // clientX/Y = Window;
-  // Client (X, Y):(0,0) = (Left, Up) [Screen Plane]
-  // Window (X, -Y):(0, 0-MaxY) = (Left, Down) [Cartesian Plane]
-  // console.log(ptrMoveEvt);
-
-  moveCursor(ptrMoveEvt.clientX, ptrMoveEvt.clientY);
-  // Rotate cursor aiming at the center of the image
-}
-
-function moveCursor(x, y) {
-  const borderWidth =
+function moveCursor(ptrX, ptrY) {
+  const horizontalPadding =
     (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
     2;
-  const borderHeight =
+  const verticalPadding =
     (html.getBoundingClientRect().height -
       body.getBoundingClientRect().height) /
     2;
+  const crsWidth = crsPortalGun.width;
+  const crsMiddleHeight = crsPortalGun.height / 2;
 
-  crsPortalGun.style.left = `${x - borderWidth}px`;
-  crsPortalGun.style.top = `${y - borderHeight}px`;
+  // get size finger
+
+  crsPortalGun.style.left = `${ptrX - horizontalPadding - crsWidth}px`;
+  crsPortalGun.style.top = `${ptrY - verticalPadding - crsMiddleHeight}px`;
+}
+
+function rotateCursor(ptrX, ptrY) {
+  const poleX =
+    image.getBoundingClientRect().left +
+    image.getBoundingClientRect().width / 2;
+  const poleY =
+    image.getBoundingClientRect().top +
+    image.getBoundingClientRect().height / 2;
+
+  // The angle in radians (between -π and π, inclusive).
+  // Inverted Y axis, according to the Cartesian coordinate system.
+  const angle = Math.atan2(-(ptrY - poleY), ptrX - poleX);
+
+  // Mirrors the cursor across the rotated y-axis
+  const inverted = ptrX < poleX ? -1 : 1;
+
+  // Negative angle, counterclockwise rotation.
+  crsPortalGun.style.transform = `rotate(${-angle}rad) scaleY(${inverted})`;
+
+  // Pointer anchoring in the vertical middle of the right side.
+  crsPortalGun.style.transformOrigin = "100% 50%";
+}
+
+function polarCursor(ptrMoveEvt) {
+  const ptrX = ptrMoveEvt.clientX;
+  const ptrY = ptrMoveEvt.clientY;
+
+  moveCursor(ptrX, ptrY);
+  rotateCursor(ptrX, ptrY);
 }
 
 // [ ] When pointerdown in btnGenerate chage cursor to img
 // [X] Active setPointerCapture
-// [ ] Calcule the polar coordinate angle between img and cursor
-// [ ] Rotate the cursor
+// [X] Calcule the polar coordinate angle between img and cursor
+// [X] Rotate the cursor
 // [ ] When pointerup trigger the animation of laser.
-// [ ] Starts the main function.
+// [X] Starts the main function.
 
-//   // [X] Create image tag in HTML.
-//   // [X] start with hide
-//   // [X] On touch reveal image
-//   // [X] move image with coordinate of touch
-// });
+// [X] Create image tag in HTML.
+// [X] start with hide
+// [X] On touch reveal image
+// [X] move image with coordinate of touch
 
 header.addEventListener("click", () => {
   gifOverlayPassing();

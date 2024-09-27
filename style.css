@@ -158,6 +158,7 @@ main {
   left: 0px;
   top: 0px;
   z-index: 3;
+  border: #ff0000 1px solid;
 }
 
 button {
