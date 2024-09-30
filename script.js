@@ -377,7 +377,7 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   );
 });
 
-function moveCursor(ptrX, ptrY) {
+function moveCursor(ptrX, ptrY, fingerRadius) {
   const horizontalPadding =
     (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
     2;
@@ -388,9 +388,9 @@ function moveCursor(ptrX, ptrY) {
   const crsWidth = crsPortalGun.width;
   const crsMiddleHeight = crsPortalGun.height / 2;
 
-  // get size finger
-
-  crsPortalGun.style.left = `${ptrX - horizontalPadding - crsWidth}px`;
+  crsPortalGun.style.left = `${
+    ptrX - horizontalPadding - crsWidth - fingerRadius
+  }px`;
   crsPortalGun.style.top = `${ptrY - verticalPadding - crsMiddleHeight}px`;
 }
 
@@ -419,8 +419,16 @@ function rotateCursor(ptrX, ptrY) {
 function polarCursor(ptrMoveEvt) {
   const ptrX = ptrMoveEvt.clientX;
   const ptrY = ptrMoveEvt.clientY;
+  const ptrW = ptrMoveEvt.width;
+  const ptrH = ptrMoveEvt.height;
 
-  moveCursor(ptrX, ptrY);
+  // The default is 1, if the hardware cannot report.
+  const fingerRadius =
+    ptrW === 1 && ptrH === 1 ? 0 : Math.sqrt(ptrW ** 2 + ptrH ** 2) / 2;
+
+  console.log(`Finger Radius: ${fingerRadius}`);
+
+  moveCursor(ptrX, ptrY, fingerRadius);
   rotateCursor(ptrX, ptrY);
 }
 
