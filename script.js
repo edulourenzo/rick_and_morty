@@ -95,12 +95,6 @@ async function main(params) {
 
   readyData = true;
 }
-// variable boolean to lock/unlock custom mouse cursor
-// get position relative by button
-// mirror mouse cursor
-// rotate the mouse cursor relative to the center of the button
-// create shooting animation, from the center of the cursor to the center of the button
-// add laser sound
 
 function setImage(blob) {
   // Create object from image
@@ -355,9 +349,10 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   btnGenerate.setPointerCapture(ptrDownEvt.pointerId);
   ptrDownEvt.preventDefault();
 
+  // Prevents generating the cursor at the original position of the body tag.
   polarCursor(ptrDownEvt);
 
-  // btnGenerate.style.cursor = "none";
+  btnGenerate.style.cursor = "none";
   crsPortalGun.style.visibility = "visible";
 
   btnGenerate.addEventListener("pointermove", polarCursor);
@@ -377,7 +372,7 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   );
 });
 
-function moveCursor(ptrX, ptrY, fingerRadius) {
+function moveCursor(ptrX, ptrY) {
   const horizontalPadding =
     (html.getBoundingClientRect().width - body.getBoundingClientRect().width) /
     2;
@@ -388,13 +383,11 @@ function moveCursor(ptrX, ptrY, fingerRadius) {
   const crsWidth = crsPortalGun.width;
   const crsMiddleHeight = crsPortalGun.height / 2;
 
-  crsPortalGun.style.left = `${
-    ptrX - horizontalPadding - crsWidth - fingerRadius
-  }px`;
+  crsPortalGun.style.left = `${ptrX - horizontalPadding - crsWidth}px`;
   crsPortalGun.style.top = `${ptrY - verticalPadding - crsMiddleHeight}px`;
 }
 
-function rotateCursor(ptrX, ptrY) {
+function rotateCursor(ptrX, ptrY, fingerRadius) {
   const poleX =
     image.getBoundingClientRect().left +
     image.getBoundingClientRect().width / 2;
@@ -410,7 +403,7 @@ function rotateCursor(ptrX, ptrY) {
   const inverted = ptrX < poleX ? -1 : 1;
 
   // Negative angle, counterclockwise rotation.
-  crsPortalGun.style.transform = `rotate(${-angle}rad) scaleY(${inverted})`;
+  crsPortalGun.style.transform = `rotate(${-angle}rad) scaleY(${inverted}) translateX(${-fingerRadius}px)`;
 
   // Pointer anchoring in the vertical middle of the right side.
   crsPortalGun.style.transformOrigin = "100% 50%";
@@ -419,30 +412,20 @@ function rotateCursor(ptrX, ptrY) {
 function polarCursor(ptrMoveEvt) {
   const ptrX = ptrMoveEvt.clientX;
   const ptrY = ptrMoveEvt.clientY;
-  const ptrW = ptrMoveEvt.width;
-  const ptrH = ptrMoveEvt.height;
+  const ptrW = 81; /*ptrMoveEvt.width;*/
+  const ptrH = 64; /*ptrMoveEvt.height;*/
 
   // The default is 1, if the hardware cannot report.
   const fingerRadius =
     ptrW === 1 && ptrH === 1 ? 0 : Math.sqrt(ptrW ** 2 + ptrH ** 2) / 2;
 
-  console.log(`Finger Radius: ${fingerRadius}`);
-
-  moveCursor(ptrX, ptrY, fingerRadius);
-  rotateCursor(ptrX, ptrY);
+  moveCursor(ptrX, ptrY);
+  rotateCursor(ptrX, ptrY, fingerRadius);
 }
 
-// [ ] When pointerdown in btnGenerate chage cursor to img
-// [X] Active setPointerCapture
-// [X] Calcule the polar coordinate angle between img and cursor
-// [X] Rotate the cursor
-// [ ] When pointerup trigger the animation of laser.
-// [X] Starts the main function.
-
-// [X] Create image tag in HTML.
-// [X] start with hide
-// [X] On touch reveal image
-// [X] move image with coordinate of touch
+// ========== ToDo List ==========
+// [ ] Cursor size proportional to the body tag
+// [ ] Create div tag to represent laser beam shot
 
 header.addEventListener("click", () => {
   gifOverlayPassing();
