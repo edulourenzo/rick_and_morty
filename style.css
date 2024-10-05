@@ -70,6 +70,18 @@ body {
   background-color: #7777ff;
 }
 
+#cursor-portal-gun {
+  position: absolute;
+  visibility: hidden;
+  width: 12.5%;
+  /* Original proportion */
+  aspect-ratio: 47 / 32;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+  border: #ff0000 1px solid;
+}
+
 header {
   box-sizing: border-box;
   position: relative;
@@ -150,15 +162,6 @@ main {
   border-radius: 0px 12.5px 12.5px 0px;
   text-align: left;
   line-height: 1;
-}
-
-#cursor-portal-gun {
-  position: absolute;
-  visibility: hidden;
-  left: 0px;
-  top: 0px;
-  z-index: 3;
-  border: #ff0000 1px solid;
 }
 
 button {

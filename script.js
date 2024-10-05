@@ -412,8 +412,8 @@ function rotateCursor(ptrX, ptrY, fingerRadius) {
 function polarCursor(ptrMoveEvt) {
   const ptrX = ptrMoveEvt.clientX;
   const ptrY = ptrMoveEvt.clientY;
-  const ptrW = 81; /*ptrMoveEvt.width;*/
-  const ptrH = 64; /*ptrMoveEvt.height;*/
+  const ptrW = ptrMoveEvt.width;
+  const ptrH = ptrMoveEvt.height;
 
   // The default is 1, if the hardware cannot report.
   const fingerRadius =
@@ -424,7 +424,6 @@ function polarCursor(ptrMoveEvt) {
 }
 
 // ========== ToDo List ==========
-// [ ] Cursor size proportional to the body tag
 // [ ] Create div tag to represent laser beam shot
 
 header.addEventListener("click", () => {
