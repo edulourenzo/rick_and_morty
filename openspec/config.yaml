@@ -1,0 +1,46 @@
+schema: spec-driven
+
+context: |
+  ## Stack tecnológica
+  - HTML5, CSS3 e JavaScript puro (sem frameworks ou bibliotecas externas)
+  - Sem ferramentas de build (sem npm, webpack ou bundlers)
+  - Fonte customizada: "Ricky and Morty font" (arquivo .ttf local)
+
+  ## API
+  - Rick and Morty API REST pública: https://rickandmortyapi.com/api/character/
+  - Comunicação via Fetch API nativa do browser
+  - Dados consumidos: id, nome, status, espécie e gênero do personagem
+  - Imagem do personagem obtida como Blob e exibida via URL.createObjectURL()
+
+  ## Domínio
+  - Aplicação de página única (SPA sem roteamento)
+  - Sorteia um personagem aleatório da API ao clicar no botão "Gerar"
+  - Exibe imagem e informações do personagem em um grid
+
+  ## Animações
+  - Usa a Web Animations API (new Animation / KeyframeEffect)
+  - Três animações encadeadas: portalAppearing → portalSpinning (loop enquanto aguarda dados) → portalFading
+  - Semáforo binário (readyData) sincroniza o término do fetch com o fim da animação
+
+  ## Cursor personalizado
+  - Cursor em formato de "Portal Gun" implementado via elemento <img> posicionado via JS
+  - Rotação polar em torno da imagem do personagem usando Math.atan2
+  - Suporte a eventos de ponteiro (mouse e touch) com setPointerCapture
+
+  ## Responsividade
+  - Layout e fontes redimensionados programaticamente nos eventos load e resize
+  - Sem media queries; dimensionamento baseado em offsetHeight/offsetWidth dos elementos
+
+  ## Convenções de código
+  - "use strict" ativado
+  - Nomes de variáveis e funções em inglês (camelCase)
+  - Comentários explicativos em inglês
+  - Separação clara de seções: DOM, API, Animações, Redimensionamento, Eventos
+
+rules:
+  proposal:
+    - Manter propostas objetivas, descrevendo o problema, a solução e os não-objetivos
+    - Considerar que não há etapa de build; mudanças devem ser aplicáveis diretamente nos arquivos HTML, CSS e JS
+  tasks:
+    - Dividir tarefas em blocos de no máximo 2 horas
+    - Cada tarefa deve modificar no máximo um dos três arquivos principais (index.html, style.css, script.js)
