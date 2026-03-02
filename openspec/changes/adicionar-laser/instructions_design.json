@@ -1,0 +1,22 @@
+{
+  "changeName": "adicionar-laser",
+  "artifactId": "design",
+  "schemaName": "spec-driven",
+  "changeDir": "D:\\Edu\\Workspace\\Web\\rick_and_morty\\openspec\\changes\\adicionar-laser",
+  "outputPath": "design.md",
+  "description": "Technical design document with implementation details",
+  "instruction": "Create the design document that explains HOW to implement the change.\n\nWhen to include design.md (create only if any apply):\n- Cross-cutting change (multiple services/modules) or new architectural pattern\n- New external dependency or significant data model changes\n- Security, performance, or migration complexity\n- Ambiguity that benefits from technical decisions before coding\n\nSections:\n- **Context**: Background, current state, constraints, stakeholders\n- **Goals / Non-Goals**: What this design achieves and explicitly excludes\n- **Decisions**: Key technical choices with rationale (why X over Y?). Include alternatives considered for each decision.\n- **Risks / Trade-offs**: Known limitations, things that could go wrong. Format: [Risk] ÔåÆ Mitigation\n- **Migration Plan**: Steps to deploy, rollback strategy (if applicable)\n- **Open Questions**: Outstanding decisions or unknowns to resolve\n\nFocus on architecture and approach, not line-by-line implementation.\nReference the proposal for motivation and specs for requirements.\n\nGood design docs explain the \"why\" behind technical decisions.\n",
+  "context": "## Stack tecnol├│gica\n- HTML5, CSS3 e JavaScript puro (sem frameworks ou bibliotecas externas)\n- Sem ferramentas de build (sem npm, webpack ou bundlers)\n- Fonte customizada: \"Ricky and Morty font\" (arquivo .ttf local)\n\n## API\n- Rick and Morty API REST p├║blica: https://rickandmortyapi.com/api/character/\n- Comunica├º├úo via Fetch API nativa do browser\n- Dados consumidos: id, nome, status, esp├®cie e g├¬nero do personagem\n- Imagem do personagem obtida como Blob e exibida via URL.createObjectURL()\n\n## Dom├¡nio\n- Aplica├º├úo de p├ígina ├║nica (SPA sem roteamento)\n- Sorteia um personagem aleat├│rio da API ao clicar no bot├úo \"Gerar\"\n- Exibe imagem e informa├º├Áes do personagem em um grid\n\n## Anima├º├Áes\n- Usa a Web Animations API (new Animation / KeyframeEffect)\n- Tr├¬s anima├º├Áes encadeadas: portalAppearing ÔåÆ portalSpinning (loop enquanto aguarda dados) ÔåÆ portalFading\n- Sem├íforo bin├írio (readyData) sincroniza o t├®rmino do fetch com o fim da anima├º├úo\n\n## Cursor personalizado\n- Cursor em formato de \"Portal Gun\" implementado via elemento <img> posicionado via JS\n- Rota├º├úo polar em torno da imagem do personagem usando Math.atan2\n- Suporte a eventos de ponteiro (mouse e touch) com setPointerCapture\n\n## Responsividade\n- Layout e fontes redimensionados programaticamente nos eventos load e resize\n- Sem media queries; dimensionamento baseado em offsetHeight/offsetWidth dos elementos\n\n## Conven├º├Áes de c├│digo\n- \"use strict\" ativado\n- Nomes de vari├íveis e fun├º├Áes em ingl├¬s (camelCase)\n- Coment├írios explicativos em ingl├¬s\n- Separa├º├úo clara de se├º├Áes: DOM, API, Anima├º├Áes, Redimensionamento, Eventos",
+  "template": "## Context\n\n<!-- Background and current state -->\n\n## Goals / Non-Goals\n\n**Goals:**\n<!-- What this design aims to achieve -->\n\n**Non-Goals:**\n<!-- What is explicitly out of scope -->\n\n## Decisions\n\n<!-- Key design decisions and rationale -->\n\n## Risks / Trade-offs\n\n<!-- Known risks and trade-offs -->\n",
+  "dependencies": [
+    {
+      "id": "proposal",
+      "done": true,
+      "path": "proposal.md",
+      "description": "Initial proposal document outlining the change"
+    }
+  ],
+  "unlocks": [
+    "tasks"
+  ]
+}

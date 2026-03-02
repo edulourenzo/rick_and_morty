@@ -1,0 +1,30 @@
+{
+  "changeName": "adicionar-laser",
+  "artifactId": "tasks",
+  "schemaName": "spec-driven",
+  "changeDir": "D:\\Edu\\Workspace\\Web\\rick_and_morty\\openspec\\changes\\adicionar-laser",
+  "outputPath": "tasks.md",
+  "description": "Implementation checklist with trackable tasks",
+  "instruction": "Create the task list that breaks down the implementation work.\n\n**IMPORTANT: Follow the template below exactly.** The apply phase parses\ncheckbox format to track progress. Tasks not using `- [ ]` won't be tracked.\n\nGuidelines:\n- Group related tasks under ## numbered headings\n- Each task MUST be a checkbox: `- [ ] X.Y Task description`\n- Tasks should be small enough to complete in one session\n- Order tasks by dependency (what must be done first?)\n\nExample:\n```\n## 1. Setup\n\n- [ ] 1.1 Create new module structure\n- [ ] 1.2 Add dependencies to package.json\n\n## 2. Core Implementation\n\n- [ ] 2.1 Implement data export function\n- [ ] 2.2 Add CSV formatting utilities\n```\n\nReference specs for what needs to be built, design for how to build it.\nEach task should be verifiable - you know when it's done.\n",
+  "context": "## Stack tecnol├│gica\n- HTML5, CSS3 e JavaScript puro (sem frameworks ou bibliotecas externas)\n- Sem ferramentas de build (sem npm, webpack ou bundlers)\n- Fonte customizada: \"Ricky and Morty font\" (arquivo .ttf local)\n\n## API\n- Rick and Morty API REST p├║blica: https://rickandmortyapi.com/api/character/\n- Comunica├º├úo via Fetch API nativa do browser\n- Dados consumidos: id, nome, status, esp├®cie e g├¬nero do personagem\n- Imagem do personagem obtida como Blob e exibida via URL.createObjectURL()\n\n## Dom├¡nio\n- Aplica├º├úo de p├ígina ├║nica (SPA sem roteamento)\n- Sorteia um personagem aleat├│rio da API ao clicar no bot├úo \"Gerar\"\n- Exibe imagem e informa├º├Áes do personagem em um grid\n\n## Anima├º├Áes\n- Usa a Web Animations API (new Animation / KeyframeEffect)\n- Tr├¬s anima├º├Áes encadeadas: portalAppearing ÔåÆ portalSpinning (loop enquanto aguarda dados) ÔåÆ portalFading\n- Sem├íforo bin├írio (readyData) sincroniza o t├®rmino do fetch com o fim da anima├º├úo\n\n## Cursor personalizado\n- Cursor em formato de \"Portal Gun\" implementado via elemento <img> posicionado via JS\n- Rota├º├úo polar em torno da imagem do personagem usando Math.atan2\n- Suporte a eventos de ponteiro (mouse e touch) com setPointerCapture\n\n## Responsividade\n- Layout e fontes redimensionados programaticamente nos eventos load e resize\n- Sem media queries; dimensionamento baseado em offsetHeight/offsetWidth dos elementos\n\n## Conven├º├Áes de c├│digo\n- \"use strict\" ativado\n- Nomes de vari├íveis e fun├º├Áes em ingl├¬s (camelCase)\n- Coment├írios explicativos em ingl├¬s\n- Separa├º├úo clara de se├º├Áes: DOM, API, Anima├º├Áes, Redimensionamento, Eventos",
+  "rules": [
+    "Dividir tarefas em blocos de no m├íximo 2 horas",
+    "Cada tarefa deve modificar no m├íximo um dos tr├¬s arquivos principais (index.html, style.css, script.js)"
+  ],
+  "template": "## 1. <!-- Task Group Name -->\n\n- [ ] 1.1 <!-- Task description -->\n- [ ] 1.2 <!-- Task description -->\n\n## 2. <!-- Task Group Name -->\n\n- [ ] 2.1 <!-- Task description -->\n- [ ] 2.2 <!-- Task description -->\n",
+  "dependencies": [
+    {
+      "id": "specs",
+      "done": true,
+      "path": "specs/**/*.md",
+      "description": "Detailed specifications for the change"
+    },
+    {
+      "id": "design",
+      "done": true,
+      "path": "design.md",
+      "description": "Technical design document with implementation details"
+    }
+  ],
+  "unlocks": []
+}
