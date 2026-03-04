@@ -8,6 +8,7 @@ const header = document.getElementsByTagName("header")[0];
 const title = document.getElementsByTagName("h1")[0];
 const imgLightning = document.getElementById("img-lightning");
 const audLightning = document.getElementById("aud-lightning");
+const audLaser = document.getElementById("aud-laser");
 const image = document.getElementById("image");
 const imgPortal = document.getElementById("img-portal");
 const gridCCntr = document.getElementById("grid-container");
@@ -369,6 +370,8 @@ function laserBeamAnimation(ptrX, ptrY) {
     // Set initial state: small pill anchored at cursor (left edge = pivot).
     laserBeam.style.display = 'block';
     laserBeam.style.opacity = '1';
+    audLaser.currentTime = 0;
+    audLaser.play();
     laserBeam.style.width = H + 'px';
     laserBeam.style.height = H + 'px';
     laserBeam.style.borderRadius = R + 'px';
