@@ -177,7 +177,7 @@ button {
 footer {
   box-sizing: border-box;
   height: 2.5%;
-  background: #33ff33;
+  background: #6fc41c;
   text-align: center;
   font-size: 5px;
   line-height: 1;
@@ -192,7 +192,7 @@ footer {
   display: none;
   width: 10px;
   height: 10px;
-  background: linear-gradient(to bottom, #00cc00, #ccff00, #00cc00);
+  background: linear-gradient(to bottom, #448a32, #6fc41c , #448a32);
   border-radius: 50%;
   z-index: 9999;
   opacity: 0;

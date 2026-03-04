@@ -9,6 +9,7 @@ const title = document.getElementsByTagName("h1")[0];
 const imgLightning = document.getElementById("img-lightning");
 const audLightning = document.getElementById("aud-lightning");
 const audLaser = document.getElementById("aud-laser");
+const audPortal = document.getElementById("aud-portal");
 const image = document.getElementById("image");
 const imgPortal = document.getElementById("img-portal");
 const gridCCntr = document.getElementById("grid-container");
@@ -82,6 +83,8 @@ async function main(params) {
   const anmSpinning = portalSpinning(anmFading);
   const anmAppearing = portalAppearing(anmFading, anmSpinning); // Fast and Slow
 
+  audPortal.currentTime = 0;
+  audPortal.play();
   anmAppearing.play();
 
   // Draw character number
