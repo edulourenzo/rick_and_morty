@@ -19,6 +19,7 @@ const valGender = document.getElementById("val-gender");
 const crsPortalGun = document.getElementById("cursor-portal-gun");
 const btnGenerate = document.getElementById("btn-generate");
 const footer = document.getElementsByTagName("footer")[0];
+const laserBeam = document.getElementById("laser-beam");
 
 // Initialization of API
 const apiCharacter = "https://rickandmortyapi.com/api/character/";
@@ -66,6 +67,7 @@ let cursorLocked = false;
 // Params
 let character = {};
 let imageBlob = new Blob();
+let lastPtrX, lastPtrY;
 
 async function main(params) {
   let response = null;
@@ -325,6 +327,119 @@ function gifOverlayPassing() {
   );
 }
 
+function laserBeamAnimation(ptrX, ptrY) {
+  return new Promise((resolve) => {
+    if (!laserBeam) { resolve(); return; }
+
+    // Cancel any running animation first.
+    laserBeam.getAnimations().forEach((a) => a.cancel());
+
+    // position:fixed — clientX/Y map directly to viewport.
+    const startX = ptrX;
+    const startY = ptrY;
+
+    const imgRect = image.getBoundingClientRect();
+    const poleX = imgRect.left + imgRect.width / 2;
+    const poleY = imgRect.top + imgRect.height / 2;
+
+    const dx = poleX - startX;
+    const dy = poleY - startY;
+    let dist = Math.hypot(dx, dy);
+    if (!isFinite(dist) || dist < 10) dist = 10;
+    const halfDist = dist / 2;
+
+    // Screen-space angle (Y-axis points downward).
+    const angle = Math.atan2(dy, dx);
+    const midX = startX + halfDist * Math.cos(angle);
+    const midY = startY + halfDist * Math.sin(angle);
+
+    const H = 10;      // beam height in px
+    const halfH = H / 2;
+    const R = halfH;   // border-radius in px (always half-height = pill/capsule shape)
+
+    // The right center of the beam in screen coords when pivot is at (left, top+halfH):
+    //   rightX = left + width * cos(angle)
+    //   rightY = top + halfH + width * sin(angle)
+    // To keep the right end fixed at (poleX, poleY) while width changes:
+    //   left = poleX - width * cos(angle)
+    //   top  = poleY - halfH - width * sin(angle)
+    const shrinkEndLeft = poleX - H * Math.cos(angle);
+    const shrinkEndTop  = poleY - halfH - H * Math.sin(angle);
+
+    // Set initial state: small pill anchored at cursor (left edge = pivot).
+    laserBeam.style.display = 'block';
+    laserBeam.style.opacity = '1';
+    laserBeam.style.width = H + 'px';
+    laserBeam.style.height = H + 'px';
+    laserBeam.style.borderRadius = R + 'px';
+    laserBeam.style.left = startX + 'px';
+    laserBeam.style.top = (startY - halfH) + 'px';
+    laserBeam.style.transform = `rotate(${angle}rad)`;
+
+    // Phase 1 – stretch from cursor toward pole: width 10px → halfDist.
+    // Left edge stays fixed at cursor; right end moves to midpoint.
+    const anm1 = laserBeam.animate(
+      [
+        { width: H + 'px',        borderRadius: R + 'px' },
+        { width: halfDist + 'px', borderRadius: R + 'px' },
+      ],
+      { duration: 83, easing: 'linear', fill: 'forwards' }
+    );
+
+    anm1.onfinish = () => {
+      laserBeam.style.width = halfDist + 'px';
+      laserBeam.style.borderRadius = R + 'px';
+      anm1.cancel();
+
+      // Phase 2 – slide the whole beam from cursor half to pole half.
+      // Move left/top so left edge goes from startX to midX (beam window slides).
+      const anm2 = laserBeam.animate(
+        [
+          { left: startX + 'px', top: (startY - halfH) + 'px' },
+          { left: midX + 'px',   top: (midY - halfH) + 'px' },
+        ],
+        { duration: 84, easing: 'linear', fill: 'forwards' }
+      );
+
+      anm2.onfinish = () => {
+        laserBeam.style.left = midX + 'px';
+        laserBeam.style.top = (midY - halfH) + 'px';
+        anm2.cancel();
+
+        // Phase 3 – shrink toward pole: right end stays fixed at (poleX, poleY),
+        // left end moves toward pole as width decreases.
+        // We animate left, top and width together to satisfy the constraint.
+        const anm3 = laserBeam.animate(
+          [
+            {
+              width: halfDist + 'px', borderRadius: R + 'px',
+              left: midX + 'px',        top: (midY - halfH) + 'px',
+            },
+            {
+              width: H + 'px',          borderRadius: R + 'px',
+              left: shrinkEndLeft + 'px', top: shrinkEndTop + 'px',
+            },
+          ],
+          { duration: 83, easing: 'linear', fill: 'forwards' }
+        );
+
+        anm3.onfinish = () => {
+          // Commit phase 3 end state before cancelling fill effect.
+          laserBeam.style.width = H + 'px';
+          laserBeam.style.left = shrinkEndLeft + 'px';
+          laserBeam.style.top = shrinkEndTop + 'px';
+          laserBeam.style.borderRadius = R + 'px';
+          anm3.cancel();
+
+          // Hide instantly and resolve.
+          laserBeam.style.display = 'none';
+          resolve();
+        };
+      };
+    };
+  });
+}
+
 // ===== Events =====
 window.addEventListener("load", () => {
   resizeTitle();
@@ -360,13 +475,23 @@ btnGenerate.addEventListener("pointerdown", (ptrDownEvt) => {
   btnGenerate.addEventListener(
     "pointerup",
     () => {
-      crsPortalGun.style.visibility = "hidden";
       btnGenerate.style.cursor = "auto";
 
       btnGenerate.removeEventListener("pointermove", polarCursor);
 
-      // Call the function that animates the laser beam.
-      main();
+      // Laser animation runs with the custom cursor still visible and frozen
+      // at lastPtrX/lastPtrY (no pointermove listener = position locked).
+      // After the laser finishes: park the cursor at the image center to avoid
+      // resize/repositioning bugs when mouseup was outside the body, then hide it.
+      laserBeamAnimation(lastPtrX, lastPtrY).then(() => {
+        const imgRect = image.getBoundingClientRect();
+        const poleX = imgRect.left + imgRect.width / 2;
+        const poleY = imgRect.top + imgRect.height / 2;
+        moveCursor(poleX, poleY);
+        rotateCursor(poleX, poleY, 0);
+        crsPortalGun.style.visibility = "hidden";
+        main();
+      });
     },
     { once: true }
   );
@@ -414,6 +539,9 @@ function polarCursor(ptrMoveEvt) {
   const ptrY = ptrMoveEvt.clientY;
   const ptrW = ptrMoveEvt.width;
   const ptrH = ptrMoveEvt.height;
+
+  lastPtrX = ptrX;
+  lastPtrY = ptrY;
 
   // The default is 1, if the hardware cannot report.
   const fingerRadius =

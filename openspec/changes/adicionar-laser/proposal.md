@@ -1,15 +1,14 @@
 ## Why
 
 Adicionar uma funcionalidade visual chamada "laser" que permite ao usuário
-disparar um feixe luminoso a partir do cursor (Portal Gun) para destacar
-personagens ou interagir com a UI. Isso aumenta o aspecto lúdico e a
+disparar um feixe luminoso a partir do cursor (Portal Gun) até o centro da imagem (Portal). Isso aumenta o aspecto lúdico e a
 imersão da aplicação sem alterar a arquitetura existente.
 
 ## What Changes
 
 - Adicionar uma nova capability `laser-effect` que implementa o comportamento
   visual e de interação do feixe.
-- Incluir controle para ativar/desativar o laser (botão UI) e breve CSS para o
+- Encadear sequencia após "mouseup" disparando o laser (botão generate) e breve CSS para o
   visual do feixe.
 - Capturar eventos de ponteiro para posicionamento e animação do feixe.
 

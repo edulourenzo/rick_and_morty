@@ -16,6 +16,10 @@ Sumário:
 Página web com ituito de aprendizado de front-end consumindo uma API externa.
 O conceito básico é criar card do desenho animado "Rick and Morty" usando a API do site: [The Rick and Morty API](https://rickandmortyapi.com/).
 
+## Usage
+
+Upon clicking and releasing the "Generate" button, a laser beam animation fires from the cursor towards the center of the character image.
+
 ## Descrição do desenho
 
  > "Rick and Morty (em português Rick e Morty) é uma série de animação adulta norte-americana de comédia e ficção científica criada por Justin Roiland e Dan Harmon para o bloco de programação noturno Adult Swim, exibido no canal Cartoon Network.

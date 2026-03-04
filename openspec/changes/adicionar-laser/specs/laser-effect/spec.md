@@ -1,26 +1,30 @@
 ## ADDED Requirements
 
-### Requirement: Visual laser beam
-The system SHALL render a visible laser beam originating from the custom
-cursor position and extending in the pointer direction while active.
+### Requirement: Laser beam visual
+O sistema **SHOULD** renderizar um feixe de laser visível originando-se na lateral da imagem do cursor personalizado. Sendo o laser uma figura geométrica (retângulo). E terá uma sequência de animações, esticará o retangulo horizontalmente, até o centro da imagem.
 
-#### Scenario: Laser visual appears on activation
-- **WHEN** the user activates the laser (pointerdown on the canvas or toggle
-  enabled and click)
-- **THEN** a visible beam element appears at the cursor and animates along the
-  pointer direction
+### Requirement:Requirement: Alignment and rotation
+O sistema **SHOULD** rotacionar o retângulo do feixe de laser usando codenadas polares igual a rotação do ponteiro do mouse personalizado, que aponta para o centro da imagem.
 
-### Requirement: Toggle control
-The system SHALL provide a UI control to enable or disable the laser feature.
+#### Scenario: Step 1 - Initiating the laser beam
+- **WHEN** o usuário soltar o botão do mouse após clicar no botão "Generate", iniciará a animação do feixe de laser.
+- **THEN** uma forma geomética retancular de cor degrade horizontal, sendo as bordas na cor verde e centro verde limão, será iniciando com lados iguais e bordas arredondadas de 50%, iniciando na lateral direita do cursor personalizado do mouse ao meio. 
 
-#### Scenario: Toggle disables laser
-- **WHEN** the user toggles the laser off
-- **THEN** subsequent pointer interactions do not render or animate the beam
+#### Scenario: Setp 2 - Stretch the laser halfway.
+- **WHEN** terminar a execução do "Step 1".
+- **THEN** deve animar o retângulo do feixe do laser em 333ms, linearmente, esticando o retângulo desde a lateral da imagem do ponteiro do mouse personalizado até a metade do comprimento da lateral direita da imagem do curso personalizado e o centro da imagem (caminho), continuando na lateral do cursor.
 
-### Requirement: Highlight on intersection
-The system SHALL visually highlight a character card when the laser beam
-overlaps the card's bounding box.
+#### Scenario: Step 3 - Requirement: Move the laser beam bar to the center of the image
+- **WHEN** terminar a execução do "Step 2".
+- **THEN** deve animar o retângulo do feixe do laser em 334ms, movendo o totalmente com base na lateral direita (metade do caminho) até o centro da imagem.
 
-#### Scenario: Highlight character on beam overlap
-- **WHEN** the laser beam intersects a character card bounding box
-- **THEN** the card receives a highlight style (e.g., outline or glow)
+#### Scenario: Step 4 - Requirement: Shrink the laser beam bar
+- **WHEN** terminar a execução do "Step 3".
+- **THEN** deve animar o retângulo do feixe do laser encolhendo em 333ms, encolhendo a partir da lateral esquerda, até o retangulo virar um quadrado (lados de mesmo tamanho), continuando no centro da imagem.
+
+#### Scenario: Step 5 - Requirement: Hide the laser beam
+- **WHEN** terminar a execução do "Step 4".
+- **THEN** deve ocultar o feixe de laser e encerrar a animação.
+
+### Requirement:Requirement: Alignment and rotation
+O sistema **SHOULD** encadear as animaçõe do Step 1 ao 5 sequencialmente.
