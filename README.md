@@ -114,8 +114,8 @@ Lista de tarefas concluidas e futuras para manter o histórico de afazeres.
 - [x] Sincronizar a inserção de dados após a animação.
 - [x] Estudar sobre ponteiro, clique e toque.
 - [x] Capturar arraste do ponteiro.
-- [ ] Criar animação de tiro de raio laser.
-- [ ] Adicionar efeito sonoro ao tiro.
+- [x] Criar animação de tiro de raio laser.
+- [x] Adicionar efeito sonoro ao tiro.
 - [ ] Customizar a div e os campos.
 - [ ] Verificar capturas de erros.
 - [ ] Testar rede e conexão pela ferramenta do browser.
